@@ -2,7 +2,7 @@ import "./App.css";
 import Routers from "../src/routers/Routers";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import React, { Fragment } from "react";
+import React from "react";
 
 function App() {
   return (
