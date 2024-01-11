@@ -1,12 +1,12 @@
 import React from "react";
 import "./BlogList.css";
 import { Col } from "reactstrap";
-import blogReview from "../../../assets/data/blogReviews";
+import blogReviews from "../../../assets/data/blogReviews";
 
 const BlogList = () => {
   return (
     <>
-      {blogReview.map((item) => (
+      {blogReviews.map((item) => (
         <BlogItem item={item} key={item.id} />
       ))}
     </>
@@ -21,7 +21,7 @@ const BlogItem = ({ item }) => {
         <img src={imgUrl} alt="Blog Review" />
         <div className="blog__info">
           <a href={`/blogs${title}`}>{title}</a>
-          <p className="sesction__description">
+          <p className="section__description">
             {description.length > 100
               ? description.substr(0, 100)
               : description}

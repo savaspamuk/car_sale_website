@@ -4,7 +4,7 @@
 }
 
 .slider__item-1 {
-    background: linear-gradient(rgb(0, 13, 107, 0.5), #000d6b80), url(../../../assets/images/slider-images/slider-1.jpg)!;
+    background: linear-gradient(rgb(0, 13, 107, 0.5), #000d6b80), url(../../../assets/images/slider-images/slider-1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
