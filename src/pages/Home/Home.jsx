@@ -6,6 +6,7 @@ import FindCarForm from "../../components/UI/FindCarForm/FindCarForm";
 import AboutSection from "../../components/UI/AboutSection/AboutSection";
 import AgencyList from "../../components/UI/AgencyList/AgencyList";
 import CarItem from "../../components/UI/CarItem/CarItem";
+import BlogList from "../../components/UI/BlogList/BlogList";
 
 const Home = () => {
   const [cars, setCars] = useState([]);
@@ -64,6 +65,18 @@ const Home = () => {
               <h4 className="section__title">Hot Offers</h4>
             </Col>
             <CarItem cars={cars} />
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <h6 className="section__subtitle">Read</h6>
+              <h4 className="section__title">Our authors' reviews</h4>
+            </Col>
+            <BlogList />
           </Row>
         </Container>
       </section>
