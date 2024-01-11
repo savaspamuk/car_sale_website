@@ -1,0 +1,24 @@
+.service__item span h4 {
+    color: #f9a826;
+}
+
+.service__item h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.service__item a {
+    text-decoration: none;
+    color: #000c6bd0;
+    transition: 0.3s;
+}
+
+.service__item a:hover {
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.service__item a span {
+    margin-left: 5px;
+}

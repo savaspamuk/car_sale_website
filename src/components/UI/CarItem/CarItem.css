@@ -1,0 +1,54 @@
+.car__item {
+    border: 1px solid #7c8a9736;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.car__item > .car__img > img {
+    width: 100%;
+}
+
+.car__item-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car__item-info span {
+    margin-right: 15px;
+}
+.car__item-info span i {
+    color: #f9a826;
+    font-size: 1.1rem;
+}
+
+.car__item-btn-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.car__item-btn {
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline: none;
+    background-color: #f9a826;
+    color: #fff;
+    width: 100%;
+}
+
+.car__item-btn:hover {
+    color: #f9f9f9bb;
+}
+
+.car__btn-details {
+    background: #000d6b;
+    border-radius: 0 4px 4px 0;
+}
+
+.car__item-content h4 {
+    font-size: 1.8rem;
+}
+
+.car__item-content h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
