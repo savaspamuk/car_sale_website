@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Col } from "reactstrap";
 import "./CarItem.css";
 import CarForSale from "../../../assets/images/car-for-sale.png";
 
 const CarItem = ({ cars }) => {
-  const displayCars = cars.slice(0, 6);
   return (
     <>
-      {displayCars.map((car, index) => (
+      {cars.map((car, index) => (
         <Col key={index} lg="4" md="4" sm="6" className="mb-5">
           <div className="car__item">
             <div className="car__img">

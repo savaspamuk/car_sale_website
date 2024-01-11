@@ -2,6 +2,7 @@
     border: 1px solid #7c8a9736;
     padding: 20px;
     border-radius: 5px;
+    height: 100%;
 }
 
 .car__item > .car__img > img {
@@ -10,7 +11,7 @@
 
 .car__item-info {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .car__item-info span {

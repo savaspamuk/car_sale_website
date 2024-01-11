@@ -21,9 +21,6 @@ const HeroSlider = () => {
           <div className="slider__content">
             <h4 className="text-light mb-3">Prices starting from 20.000SEK</h4>
             <h1 className="text-light mb-4">Reserve Now and Buy A Car</h1>
-            <button className="btn reserve__btn mt-4">
-              <a href="/cars">Reserve Now</a>
-            </button>
           </div>
         </Container>
       </div>
@@ -33,9 +30,6 @@ const HeroSlider = () => {
           <div className="slider__content">
             <h4 className="text-light mb-3">Prices starting from 20.000SEK</h4>
             <h1 className="text-light mb-4">Reserve Now and Buy A Car</h1>
-            <button className="btn reserve__btn mt-4">
-              <a href="/cars">Reserve Now</a>
-            </button>
           </div>
         </Container>
       </div>
@@ -45,9 +39,6 @@ const HeroSlider = () => {
           <div className="slider__content">
             <h4 className="text-light mb-3">Prices starting from 20.000SEK</h4>
             <h1 className="text-light mb-4">Reserve Now and Buy A Car</h1>
-            <button className="btn reserve__btn mt-4">
-              <a href="/cars">Reserve Now</a>
-            </button>
           </div>
         </Container>
       </div>

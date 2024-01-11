@@ -25,6 +25,8 @@ const Home = () => {
 
     getCars();
   }, []);
+
+  const displayCars = cars.slice(0, 6);
   return (
     <Helmet title="Home">
       <section className="p-0 hero__slider-section">
@@ -64,7 +66,7 @@ const Home = () => {
               <h6 className="section__subtitle">Come with</h6>
               <h4 className="section__title">Hot Offers</h4>
             </Col>
-            <CarItem cars={cars} />
+            <CarItem cars={displayCars} />
           </Row>
         </Container>
       </section>
