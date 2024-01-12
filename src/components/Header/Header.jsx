@@ -48,7 +48,7 @@ const Header = () => {
             <Col lg="4" md="3" sm="4">
               <div className="logo">
                 <h1>
-                  <a href="/home">
+                  <a href="/">
                     <i class="ri-car-line"></i>
                     <span> Buy A Car</span>
                   </a>

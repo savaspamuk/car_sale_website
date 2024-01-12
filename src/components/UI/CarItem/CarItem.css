@@ -1,5 +1,12 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .car__item {
-    border: 1px solid #7c8a9736;
+    border: 1px solid var(--main-color);
     padding: 20px;
     border-radius: 5px;
     height: 100%;
@@ -18,7 +25,7 @@
     margin-right: 15px;
 }
 .car__item-info span i {
-    color: #f9a826;
+    color: var(--main-highlight-color);
     font-size: 1.1rem;
 }
 
@@ -31,17 +38,17 @@
     border-radius: 4px 0 0 4px;
     border: none;
     outline: none;
-    background-color: #f9a826;
-    color: #fff;
+    background-color: var(--main-highlight-color);
+    color: var(--main-text-color);
     width: 100%;
 }
 
 .car__item-btn:hover {
-    color: #f9f9f9bb;
+    color: var(--section-description);
 }
 
 .car__btn-details {
-    background: #000d6b;
+    background: var(--main-color);
     border-radius: 0 4px 4px 0;
 }
 

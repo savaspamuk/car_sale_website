@@ -1,5 +1,6 @@
+
 .common__section {
-    background: linear-gradient(rgb(0, 13, 107, 0.6), rgb(0, 13, 107, 0.6)), url('#');
+    background: linear-gradient(rgba(169, 24, 24, 0.6), rgb(169, 24, 24, 0.6));
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -1,3 +1,10 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .blog__details-container {
     display: flex;
     flex-direction: column;
@@ -8,7 +15,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 1px solid #7c8a9736;
+    border: 1px solid var(--section-description);
 }
 
 .section__title {
@@ -22,7 +29,7 @@
 }
 
 .blog__author {
-    color: #f9a826;
+    color: var(--main-highlight-color);
     padding-bottom: 10px;
 }
 

@@ -18,7 +18,7 @@ const Footer = () => {
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
-                <a href="/home">
+                <a href="/">
                   <i class="ri-car-line"></i>
                   <span> Buy A Car</span>
                 </a>

@@ -1,5 +1,12 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .service__item span h4 {
-    color: #f9a826;
+    color: var(--main-highlight-color);
 }
 
 .service__item h6 {
@@ -10,7 +17,7 @@
 
 .service__item a {
     text-decoration: none;
-    color: #000c6bd0;
+    color: var(--main-color);
     transition: 0.3s;
 }
 

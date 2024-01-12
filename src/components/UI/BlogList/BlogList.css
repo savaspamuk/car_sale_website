@@ -1,5 +1,12 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .blog__item {
-    border: 1px solid #7c8a972e;
+    border: 1px solid var(--main-color);
 }
 
 .blog__item img {
@@ -12,21 +19,21 @@
 
 .blog__info a {
     text-decoration: none;
-    color: #000d6b;
+    color: var(--main-color);
     font-weight: 700;
     font-size: 1.2rem;
 }
 
 .blog__date {
-    border-top: 1px solid #7c8a972e;
+    border-top: 1px solid var(--main-color);
 }
 
 .blog__date span i {
-    color: #f9a826;
+    color: var(--main-highlight-color);
 }
 
 .read__more {
-    color: #f9a826 !important;
+    color: var(--main-highlight-color) !important;
     font-weight: 600;
     text-decoration: none;
     font-size: 1rem !important;
@@ -34,12 +41,12 @@
 }
 
 .read__more:hover {
-    color: #f9a826;
+    color: var(--main-highlight-color);
     letter-spacing: 0.1rem;
 }
 
 .blog__author {
-    color: #000d6b;
+    color: var(--main-color);
     font-weight: 600;
 }
 

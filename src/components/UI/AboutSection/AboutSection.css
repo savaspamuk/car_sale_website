@@ -1,8 +1,15 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .about__section-item {
     column-gap: 3rem;
 }
 
 .about__section-item p i {
-    color: #f9a826;
+    color: var(--main-highlight-color);
     font-size: 1.1rem;
 }

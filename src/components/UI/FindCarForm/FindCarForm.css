@@ -1,23 +1,30 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
 .find__cars-left {
-    background: linear-gradient(rgba(104, 57, 17, 0.8), rgb(249, 138, 38, 0.9)), url(../../../assets/images/find-your-car-image.jpg);
+    background: linear-gradient(rgba(104, 17, 17, 0.8), rgba(107, 100, 94, 0.9)), url(../../../assets/images/find-your-car-image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 65px 35px;
-    color: #fff;
+    color: var(--main-text-color);
 }
 
 .find__cars-left h2 {
     font-weight: 600;
     font-size: 2.8rem;
-    color: #fff;
+    color: var(--main-text-color);
 }
 
 .form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    background: #fff;
+    background: var(--main-text-color);
     padding: 25px 0 20px 15px;
 }
 
@@ -27,7 +34,7 @@
 }
 
 .form__group input {
-    border: 1px solid #7c8a972a;
+    border: 1px solid var(--main-color);
     padding: 8px 12px;
     outline: none;
     width: 100%;
@@ -41,9 +48,9 @@
 .select__group select {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid #7c8a972a;
+    border: 1px solid var(--main-color);
     outline: none;
-    color: #7c8a97;
+    color: var(--section-description);
 }
 
 .hero__slider-section {
@@ -60,13 +67,13 @@
 }
 
 .form__row {
-    background: #fff;
-    box-shadow: 5px 5px 15px -5px #7c8a97;
+    background: var(--main-text-color);
+    box-shadow: 5px 5px 15px -5px var(--section-description);
 }
 
 .find__car-btn {
-    background: #000d6b !important;
-    color: #fff !important;
+    background: var(--main-color) !important;
+    color: var(--main-text-color) !important;
     padding: 8px 15px;
     width: 100%;
     border: none;
