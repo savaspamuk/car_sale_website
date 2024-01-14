@@ -1,0 +1,59 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
+.car__info-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.car__info-container > div > img {
+    width: 100%;
+}
+
+.car__info {
+    margin-left: 20px;
+}
+
+.car__info-price {
+    display: flex;
+    gap: 5px;
+    color: var(--main-highlight-color);
+}
+
+.car__info-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid var(--section-description);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.car__info-details span i {
+    color: var(--main-highlight-color);
+    margin-right: 4px;
+}
+
+.car__info-btn-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.car__info-btn {
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline: none;
+    background-color: var(--main-color);
+    color: var(--main-text-color);
+    width: 100%;
+}
+
+.car__info-btn:hover {
+    color: var(--section-description);
+}

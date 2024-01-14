@@ -1,0 +1,62 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
+.car__item {
+    border: 1px solid var(--main-color);
+    padding: 20px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.car__item > .car__img > img {
+    width: 100%;
+}
+
+.car__item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.car__item-info span {
+    margin-right: 15px;
+}
+.car__item-info span i {
+    color: var(--main-highlight-color);
+    font-size: 1.1rem;
+}
+
+.car__item-btn-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.car__item-btn {
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline: none;
+    background-color: var(--main-highlight-color);
+    color: var(--main-text-color);
+    width: 100%;
+}
+
+.car__item-btn:hover {
+    color: var(--section-description);
+}
+
+.car__btn-details {
+    background: var(--main-color);
+    border-radius: 0 4px 4px 0;
+}
+
+.car__item-content h4 {
+    font-size: 1.8rem;
+}
+
+.car__item-content h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}

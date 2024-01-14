@@ -1,0 +1,39 @@
+:root {
+    --main-color: #212121;
+    --main-highlight-color: #fc9898;
+    --main-text-color: #fff;
+    --section-description: #757575;
+  }
+
+.blog__details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.blog__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid var(--section-description);
+}
+
+.section__title {
+    padding: 20px 20px;
+    
+}
+
+.blog__details-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog__author {
+    color: var(--main-highlight-color);
+    padding-bottom: 10px;
+}
+
+.blog__date {
+    font-size: 1rem;
+    padding: 10px 0;
+}
