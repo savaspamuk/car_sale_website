@@ -6,7 +6,7 @@ const blogReviews = [
   {
     id: 1,
     title: "Sweden, Winter and Cars",
-    author: "David",
+    author: "David Johnson",
     date: "January 11, 2024",
     imgUrl: img1,
     description:
@@ -20,7 +20,7 @@ const blogReviews = [
   {
     id: 2,
     title: "Electric Cars",
-    author: "Johan",
+    author: "Johan Anderson",
     date: "December 1, 2023",
     imgUrl: img2,
     description:
@@ -34,7 +34,7 @@ const blogReviews = [
   {
     id: 3,
     title: "Gasoline vs Electric",
-    author: "Jonna",
+    author: "Jonna Smith",
     date: "October 7, 2023",
     imgUrl: img3,
     description:

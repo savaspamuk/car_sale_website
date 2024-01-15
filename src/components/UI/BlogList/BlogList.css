@@ -5,51 +5,45 @@
     --section-description: #757575;
   }
 
+.blog {
+    text-decoration: none;
+  }
+
+.blog h4 {
+    color: var(--main-color);
+}
+
 .blog__item {
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--section-description);
+    border-radius: 10px;
 }
 
 .blog__item img {
     width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .blog__info {
     padding: 20px;
 }
 
-.blog__info a {
-    text-decoration: none;
-    color: var(--main-color);
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.blog__date {
+.blog__tag {
     border-top: 1px solid var(--main-color);
+    display: flex;
+    flex-direction: column;
 }
 
-.blog__date span i {
+.blog__tag span i {
     color: var(--main-highlight-color);
-}
-
-.read__more {
-    color: var(--main-highlight-color) !important;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem !important;
-    transition: 0.3s;
-}
-
-.read__more:hover {
-    color: var(--main-highlight-color);
-    letter-spacing: 0.1rem;
 }
 
 .blog__author {
     color: var(--main-color);
     font-weight: 600;
+    padding-top: 10px;
 }
 
-.blog__author i {
+.blog__author i  {
     font-weight: 500;
 }
+

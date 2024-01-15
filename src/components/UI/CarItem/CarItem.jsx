@@ -14,7 +14,7 @@ const CarItem = ({ cars }) => {
             </div>
             <div className="car__item-content">
               <h4 className="section__title">{`${car.year} ${car.make} ${car.model}`}</h4>
-              <h6 className="car__price">${car.price}</h6>
+              <h6 className="car__price">€{car.price}</h6>
               <div className="car__item-info">
                 <span>
                   <i class="ri-palette-line"></i>

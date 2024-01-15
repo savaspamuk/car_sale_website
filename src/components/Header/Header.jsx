@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
-import LeftLogo from "../../assets/images/left-logo.png";
+import HeaderLogo from "../../assets/images/header-logo.png";
 import "./Header.css";
 
 const navLinks = [
@@ -21,12 +21,8 @@ const Header = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
-              <div className="header__top__left">
-                <span>Need Help?</span>
-                <span className="header__top__help">
-                  <i class="ri-phone-fill"></i>
-                  +46-123-456-78-90
-                </span>
+              <div>
+                <span>Do you want to buy a car?</span>
               </div>
             </Col>
             <Col lg="6" md="6" sm="6">
@@ -50,10 +46,10 @@ const Header = () => {
               <div className="logo">
                 <h1>
                   <a href="/">
-                    <img src={LeftLogo} alt="Left-Logo" />
+                    <img src={HeaderLogo} alt="Left-Logo" />
                     <div>
-                      <span> Buy</span>
-                      <span> A Car</span>
+                      <span>Buy ↴</span>
+                      <span>_A Car</span>
                     </div>
                   </a>
                 </h1>
@@ -84,10 +80,10 @@ const Header = () => {
             <Col lg="2" md="3" sm="0">
               <div className="header__location">
                 <span>
-                  <i class="ri-phone-line"></i>
+                  <i class="ri-customer-service-2-line"></i>
                 </span>
                 <button className="header__btn btn">
-                  <a href="/contact">CALL US NOW</a>
+                  <a href="tel: +46 123 456 78 90">CALL US NOW</a>
                 </button>
               </div>
             </Col>

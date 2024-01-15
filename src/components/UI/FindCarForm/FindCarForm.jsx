@@ -7,7 +7,7 @@ const FindCarForm = () => {
     <Form>
       <div className="form">
         <FormGroup className="form__group">
-          <input type="text" placeholder="City" required />
+          <input type="text" placeholder="Make/Model" />
         </FormGroup>
         <FormGroup className="select__group">
           <select>
@@ -19,7 +19,7 @@ const FindCarForm = () => {
           <input type="text" placeholder="Year" />
         </FormGroup>
         <FormGroup className="form__group">
-          <input type="number" placeholder="Budget" required />
+          <input type="number" placeholder="Budget (€)" />
         </FormGroup>
         <FormGroup className="select__group">
           <select>
@@ -29,7 +29,9 @@ const FindCarForm = () => {
         </FormGroup>
 
         <FormGroup className="form__group">
-          <button className="btn find__car-btn">Find Car</button>
+          <button type="submit" className="btn find__car-btn">
+            Find Car
+          </button>
         </FormGroup>
       </div>
     </Form>

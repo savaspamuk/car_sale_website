@@ -19,6 +19,7 @@
 .car__item-info {
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
 }
 
 .car__item-info span {
@@ -41,15 +42,22 @@
     background-color: var(--main-highlight-color);
     color: var(--main-text-color);
     width: 100%;
+    transition: 0.3s;
 }
 
 .car__item-btn:hover {
-    color: var(--section-description);
+    opacity: 80%;
 }
 
 .car__btn-details {
     background: var(--main-color);
     border-radius: 0 4px 4px 0;
+}
+
+.car__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .car__item-content h4 {
@@ -60,3 +68,10 @@
     font-size: 1.2rem;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 768px) {
+  
+    .car__price {
+      text-align: left;
+    }
+  }

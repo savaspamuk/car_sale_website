@@ -10,9 +10,10 @@
     padding: 50px 0 15px;
 }
 
-.footer__logo i {
+.footer__logo span {
 color: var(--main-text-color) !important;
 font-weight: 400;
+padding-left: 10px;
 }
 
 .footer__logo span {
@@ -51,6 +52,16 @@ font-weight: 400;
     font-weight: 300;
 }
 
+.office__info a {
+    text-decoration: none;
+    color: var(--section-description);
+    transition: 0.3s;
+}
+
+.office__info a:hover {
+    color: var(--main-highlight-color);
+}
+
 .newsletter {
     display: flex;
     align-items: center;
@@ -71,3 +82,18 @@ font-weight: 400;
 .newsletter span i {
     color: var(--main-text-color);
 }
+
+@media only screen and (max-width: 768px) {
+
+    .footer {
+        padding: 20px;
+    }
+  
+    .office__info {
+      text-align: left;
+    }
+
+    .footer__logo-content {
+        text-align: left;
+    }
+  }
