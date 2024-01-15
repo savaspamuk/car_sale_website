@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
+import LeftLogo from "../../assets/images/left-logo.png";
 import "./Header.css";
 
 const navLinks = [
@@ -44,13 +45,16 @@ const Header = () => {
       </div>
       <div className="header__middle">
         <Container>
-          <Row>
-            <Col lg="4" md="3" sm="4">
+          <Row className="header__middle-items">
+            <Col lg="3" md="3" sm="4">
               <div className="logo">
                 <h1>
                   <a href="/">
-                    <i class="ri-car-line"></i>
-                    <span> Buy A Car</span>
+                    <img src={LeftLogo} alt="Left-Logo" />
+                    <div>
+                      <span> Buy</span>
+                      <span> A Car</span>
+                    </div>
                   </a>
                 </h1>
               </div>
@@ -58,11 +62,11 @@ const Header = () => {
             <Col lg="3" md="3" sm="4">
               <div className="header__location">
                 <span>
-                  <i class="ri-earth-line"></i>
+                  <i class="ri-road-map-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h4>Vastra Göteland</h4>
-                  <h6>Göteborg</h6>
+                  <h4>Göteborg</h4>
+                  <h6>Vastra Götaland</h6>
                 </div>
               </div>
             </Col>
@@ -78,11 +82,14 @@ const Header = () => {
               </div>
             </Col>
             <Col lg="2" md="3" sm="0">
-              <button className="header__btn btn">
-                <a href="/contact">
-                  <i class="ri-phone-line"></i> Request a call
-                </a>
-              </button>
+              <div className="header__location">
+                <span>
+                  <i class="ri-phone-line"></i>
+                </span>
+                <button className="header__btn btn">
+                  <a href="/contact">CALL US NOW</a>
+                </button>
+              </div>
             </Col>
           </Row>
         </Container>

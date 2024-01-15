@@ -1,8 +1,8 @@
 :root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
+    --main-color: #414040;
+    --main-highlight-color: #ff4949;
     --main-text-color: #fff;
-    --section-description: #757575;
+    --section-description: #9a9a9a;
   }
 
 .slider__item {
