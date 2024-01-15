@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
+import HeaderLogo from "../../assets/images/header-logo.png";
 import "./Header.css";
 
 const navLinks = [
@@ -20,12 +21,8 @@ const Header = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
-              <div className="header__top__left">
-                <span>Need Help?</span>
-                <span className="header__top__help">
-                  <i class="ri-phone-fill"></i>
-                  +46-123-456-78-90
-                </span>
+              <div>
+                <span>Do you want to buy a car?</span>
               </div>
             </Col>
             <Col lg="6" md="6" sm="6">
@@ -44,13 +41,16 @@ const Header = () => {
       </div>
       <div className="header__middle">
         <Container>
-          <Row>
-            <Col lg="4" md="3" sm="4">
+          <Row className="header__middle-items">
+            <Col lg="3" md="3" sm="4">
               <div className="logo">
                 <h1>
                   <a href="/">
-                    <i class="ri-car-line"></i>
-                    <span> Buy A Car</span>
+                    <img src={HeaderLogo} alt="Left-Logo" />
+                    <div>
+                      <span>Buy ↴</span>
+                      <span>_A Car</span>
+                    </div>
                   </a>
                 </h1>
               </div>
@@ -58,11 +58,11 @@ const Header = () => {
             <Col lg="3" md="3" sm="4">
               <div className="header__location">
                 <span>
-                  <i class="ri-earth-line"></i>
+                  <i class="ri-road-map-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h4>Vastra Göteland</h4>
-                  <h6>Göteborg</h6>
+                  <h4>Göteborg</h4>
+                  <h6>Vastra Götaland</h6>
                 </div>
               </div>
             </Col>
@@ -78,11 +78,14 @@ const Header = () => {
               </div>
             </Col>
             <Col lg="2" md="3" sm="0">
-              <button className="header__btn btn">
-                <a href="/contact">
-                  <i class="ri-phone-line"></i> Request a call
-                </a>
-              </button>
+              <div className="header__location">
+                <span>
+                  <i class="ri-customer-service-2-line"></i>
+                </span>
+                <button className="header__btn btn">
+                  <a href="tel: +46 123 456 78 90">CALL US NOW</a>
+                </button>
+              </div>
             </Col>
           </Row>
         </Container>

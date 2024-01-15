@@ -6,7 +6,7 @@ import agencyData from "../../../assets/data/agencyData";
 const AgencyItem = ({ item }) => (
   <Col lg="4" md="4" sm="6" className="mb-3">
     <div className="service__item">
-      <span className="mb-3">
+      <span>
         <h4>{item.title}</h4>
       </span>
 

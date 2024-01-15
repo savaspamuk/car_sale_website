@@ -1,8 +1,8 @@
 :root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
+    --main-color: #414040;
+    --main-highlight-color: #ff4949;
     --main-text-color: #fff;
-    --section-description: #757575;
+    --section-description: #9a9a9a;
   }
 
 .slider__item {
@@ -36,23 +36,10 @@
 }
 
 .slider__content {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 .slider__content h1 {
     font-size: 3.2rem;
-    font-weight: 600;
-}
-
-.reserve__btn {
-    background: var(--main-text-color) !important;
-    color: var(--main-color);
-    border: 1px solid var(--main-color) !important;
-    outline: none;
-
-}
-
-.reserve__btn a {
-    text-decoration: none;
     font-weight: 600;
 }

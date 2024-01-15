@@ -1,23 +1,25 @@
 :root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
+    --main-color: #414040;
+    --main-highlight-color: #ff4949;
     --main-text-color: #fff;
-    --section-description: #757575;
+    --section-description: #9a9a9a;
   }
 
-.find__cars-left {
+.find__cars-top {
     background: linear-gradient(rgba(104, 17, 17, 0.8), rgba(107, 100, 94, 0.9)), url(../../../assets/images/find-your-car-image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 35px 35px;
     color: var(--main-text-color);
+    width: 100%;
 }
 
-.find__cars-left h2 {
+.find__cars-top h2 {
     font-weight: 600;
     font-size: 2.8rem;
     color: var(--main-text-color);
+    text-align: end;
 }
 
 .form {
@@ -26,6 +28,7 @@
     gap: 10px;
     background: var(--main-text-color);
     padding: 25px 0 20px 15px;
+    width: 100%;
 }
 
 .form__group {
@@ -35,6 +38,7 @@
 
 .form__group input {
     border: 1px solid var(--main-color);
+    border-radius: 10px;
     padding: 8px 12px;
     outline: none;
     width: 100%;
@@ -49,6 +53,7 @@
     width: 100%;
     padding: 8px 12px;
     border: 1px solid var(--main-color);
+    border-radius: 10px;
     outline: none;
     color: var(--section-description);
 }
@@ -56,26 +61,47 @@
 .hero__slider-section {
     position: relative;
     z-index: 10;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 .hero__form {
     position: absolute;
-    bottom: 200px;
+    top: 70px;
+    right: 20px;
     z-index: 11;
-    width: 100%;
+    width: 40%;
 }
 
 .form__row {
     background: var(--main-text-color);
-    box-shadow: 5px 5px 15px -5px var(--section-description);
+    box-shadow: 5px -10px 10px 5px var(--section-description);
+    display: flex;
+    flex-direction: column;
 }
 
 .find__car-btn {
-    background: var(--main-color) !important;
+    background: var(--main-highlight-color) !important;
     color: var(--main-text-color) !important;
     padding: 8px 15px;
     width: 100%;
     border: none;
     outline: none;
 }
+
+.find__car-btn:hover {
+    opacity: 90%;
+    color: var(--main-text-color) !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .hero__form {
+        position: absolute;
+        top: 300px;
+        right: 0px;
+        z-index: 11;
+        width: 100%;
+    }
+
+    
+  }

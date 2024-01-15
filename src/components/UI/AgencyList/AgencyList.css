@@ -1,9 +1,20 @@
 :root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
+    --main-color: #414040;
+    --main-highlight-color: #ff4949;
     --main-text-color: #fff;
-    --section-description: #757575;
+    --section-description: #9a9a9a;
   }
+
+.service__item {
+    margin-bottom: 20px;
+    border: 1px solid var(--section-description);
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .service__item span h4 {
     color: var(--main-highlight-color);
@@ -29,3 +40,10 @@
 .service__item a span {
     margin-left: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+  
+    .service__item h6 {
+      text-align: left;
+    }
+  }

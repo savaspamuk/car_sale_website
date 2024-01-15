@@ -34,13 +34,13 @@ const Home = () => {
         <div className="hero__form">
           <Container>
             <Row className="form__row">
-              <Col lg="4" md="4">
-                <div className="find__cars-left">
+              <Col lg="12" md="12">
+                <div className="find__cars-top">
                   <h2>Find your car here!</h2>
                 </div>
               </Col>
 
-              <Col lg="8" md="8" sm="12">
+              <Col lg="12" md="12" sm="12">
                 <FindCarForm />
               </Col>
             </Row>
@@ -52,8 +52,10 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-5">
-              <h6 className="section__subtitle">See our</h6>
-              <h2 className="section__title">Popular Centers</h2>
+              <h6 className="section__subtitle" id="sale_centers">
+                Sale Centers
+              </h6>
+              <h2 className="section__title">Our popular sales centers</h2>
             </Col>
             <AgencyList />
           </Row>
@@ -63,8 +65,10 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12">
-              <h6 className="section__subtitle">Come with</h6>
-              <h4 className="section__title">Hot Offers</h4>
+              <h6 className="section__subtitle">Car List</h6>
+              <h4 className="section__title">
+                Check out the vehicles on our list
+              </h4>
             </Col>
             <CarItem cars={displayCars} />
           </Row>
@@ -75,8 +79,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12">
-              <h6 className="section__subtitle">Read</h6>
-              <h4 className="section__title">Our authors' reviews</h4>
+              <h6 className="section__subtitle">Read Our Blogs</h6>
+              <h4 className="section__title">News from the car world</h4>
             </Col>
             <BlogList />
           </Row>

@@ -1,8 +1,8 @@
 :root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
+    --main-color: #414040;
+    --main-highlight-color: #ff4949;
     --main-text-color: #fff;
-    --section-description: #757575;
+    --section-description: #9a9a9a;
   }
 
 .contact__from-row {
@@ -28,6 +28,11 @@
     font-size: 1.2rem;
 }
 
+.instagram {
+    color: var(--main-highlight-color);
+    font-size: 1.5rem;
+}
+
 .contact__btn {
     padding: 7px 15px;
     background: var(--main-color) !important;
@@ -35,6 +40,15 @@
     border: none;
     outline: none;
     border-radius: 5px;
+}
+
+.section__description a {
+    text-decoration: none;
+    color: var(--section-description);
+}
+
+.section__description a i {
+    color: var(--main-highlight-color);
 }
 
 .social__link-icon {
@@ -59,6 +73,11 @@
 
 h6, p {
     text-align: center;
+}
+
+.section__description {
+    display: flex;
+    justify-content: center;
 }
     
 }
