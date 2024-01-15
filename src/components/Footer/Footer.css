@@ -25,6 +25,7 @@ padding-left: 10px;
     color: var(--section-description);
     margin-top: 15px;
     line-height: 30px;
+    padding-right: 50px;
 }
 
 .quick__link {

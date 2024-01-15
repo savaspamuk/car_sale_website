@@ -29,9 +29,8 @@ const Footer = () => {
               </h1>
             </div>
             <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              laboriosam repellat necessitatibus dignissimos dolores sequi
-              numquam ipsum itaque deserunt expedita!
+              Our story centers on a dedication to transforming the online car
+              buying process. Trust us and try it...
             </p>
           </Col>
           <Col lg="2" md="3" sm="6">
