@@ -17,6 +17,25 @@
   --section-description: #757575;
 }
 
+/* GOOGLE FONTS START*/
+
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@500&family=Montserrat:wght@700&family=Source+Sans+3:wght@200;300;400;600;700;900&display=swap');
+
+/* GOOGLE FONTS END*/
+
+/* INDEX STYLE STARTS*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #212121;
+  --main-highlight-color: #fc9898;
+  --main-text-color: #fff;
+  --section-description: #757575;
+}
+
 body {
   margin: 0;
   padding: 0;
