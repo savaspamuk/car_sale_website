@@ -22,6 +22,20 @@ const CarListing = () => {
 
     getCars();
   }, []);
+
+  const handleSort = async (event) => {
+    const selectedSort = event.target.value;
+    try {
+      const response = await fetch(
+        `https://freetestapi.com/api/v1/cars?sort=name&order=${selectedSort}`
+      );
+      const data = await response.json();
+      setCars(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching sorted data:", error);
+    }
+  };
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
@@ -31,12 +45,12 @@ const CarListing = () => {
             <Col lg="12">
               <div className="car__listing-sort">
                 <span>
-                  <i class="ri-sort-asc"></i> Sort By
+                  <i class="ri-sort-asc"></i> Sort By Model Name
                 </span>
-                <select className="car__listing-select">
+                <select className="car__listing-select" onChange={handleSort}>
                   <option>Select</option>
-                  <option value="Low">Low to High</option>
-                  <option value="High">High to Low</option>
+                  <option value="asc">A to Z</option>
+                  <option value="des">Z to A</option>
                 </select>
               </div>
             </Col>
