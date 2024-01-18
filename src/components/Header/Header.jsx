@@ -62,7 +62,7 @@ const Header = () => {
                 </span>
                 <div className="header__location-content">
                   <h4>Göteborg</h4>
-                  <h6>Vastra Götaland</h6>
+                  <h6>Västra Götaland</h6>
                 </div>
               </div>
             </Col>

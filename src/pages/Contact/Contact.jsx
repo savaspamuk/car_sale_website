@@ -4,13 +4,6 @@ import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 
-const socialMediaLinks = [
-  { url: "#", icon: "" },
-  { url: "#", icon: "" },
-  { url: "#", icon: "" },
-  { url: "#", icon: "" },
-];
-
 const Contact = () => {
   return (
     <Helmet title="Contact">

@@ -3,7 +3,7 @@ import "./CarListing.css";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
-import CarItem from "../../components/UI/CarItem/CarItem";
+import Cars from "../../components/UI/Cars/Cars";
 
 const CarListing = () => {
   const [cars, setCars] = useState([]);
@@ -40,7 +40,7 @@ const CarListing = () => {
                 </select>
               </div>
             </Col>
-            <CarItem cars={cars} />
+            <Cars cars={cars} />
           </Row>
         </Container>
       </section>

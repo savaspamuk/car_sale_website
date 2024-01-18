@@ -1,10 +1,3 @@
-:root {
-    --main-color: #212121;
-    --main-highlight-color: #fc9898;
-    --main-text-color: #fff;
-    --section-description: #757575;
-  }
-
 .blog {
     text-decoration: none;
   }
@@ -14,6 +7,8 @@
 }
 
 .blog__item {
+    border: 1px solid var(--section-description);
+    border-radius: 10px;
     border: 1px solid var(--section-description);
     border-radius: 10px;
 }

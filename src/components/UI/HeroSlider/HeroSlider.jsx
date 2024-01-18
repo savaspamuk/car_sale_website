@@ -6,8 +6,8 @@ import "./HeroSlider.css";
 const HeroSlider = () => {
   const settings = {
     fade: true,
-    speed: 2000,
-    autoplaySpeed: 3000,
+    speed: 5000,
+    autoplaySpeed: 5000,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
@@ -19,8 +19,9 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-1 mt0">
         <Container>
           <div className="slider__content">
-            <h4 className="text-light mb-3">Chose, Click and Buy!</h4>
-            <h1 className="text-light mb-4">Buying a car is now very easy</h1>
+            <h4 className="text-light">Choose, Click and Buy!</h4>
+            <h1 className="text-light">Buying a car is</h1>
+            <h1 className="text-light">now very easy</h1>
           </div>
         </Container>
       </div>
@@ -28,8 +29,9 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-2 mt0">
         <Container>
           <div className="slider__content">
-            <h4 className="text-light mb-3">Chose, Click and Buy!</h4>
-            <h1 className="text-light mb-4">Buying a car is now very easy</h1>
+            <h4 className="text-light">Choose, Click and Buy!</h4>
+            <h1 className="text-light">Buying a car is</h1>
+            <h1 className="text-light">now very easy</h1>
           </div>
         </Container>
       </div>
@@ -37,8 +39,9 @@ const HeroSlider = () => {
       <div className="slider__item slider__item-3 mt0">
         <Container>
           <div className="slider__content">
-            <h4 className="text-light mb-3">Chose, Click and Buy!</h4>
-            <h1 className="text-light mb-4">Buying a car is now very easy</h1>
+            <h4 className="text-light">Choose, Click and Buy!</h4>
+            <h1 className="text-light">Buying a car is</h1>
+            <h1 className="text-light">now very easy</h1>
           </div>
         </Container>
       </div>
