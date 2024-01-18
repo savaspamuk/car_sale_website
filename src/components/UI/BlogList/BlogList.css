@@ -9,6 +9,8 @@
 .blog__item {
     border: 1px solid var(--section-description);
     border-radius: 10px;
+    border: 1px solid var(--section-description);
+    border-radius: 10px;
 }
 
 .blog__item img {

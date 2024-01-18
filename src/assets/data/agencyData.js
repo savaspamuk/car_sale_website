@@ -31,6 +31,7 @@ const agencyData = [
     title: "Stockholm South",
     address: "Söderby, Stockholm",
     desc: "Nestled in Söderby, south of Stockholm, this agency offers a temporary space with a blend of tranquility and automotive excellence. Explore the surroundings and secure your preferred car with reputable dealers in this peaceful locale.",
+    desc: "Nestled in Söderby, south of Stockholm, this agency offers a temporary space with a blend of tranquility and automotive excellence. Explore the surroundings and secure your preferred car with reputable dealers in this peaceful locale.",
     location:
       "https://www.google.com/maps/place/136+65+Söderby/@59.1855858,18.1287379,13z/data=!3m1!4b1!4m6!3m5!1s0x465f7b862c3c5bcd:0x669ffbdfb86c2484!8m2!3d59.1855488!4d18.1699372!16s%2Fg%2F11b66jgnmt?entry=ttu",
   },
@@ -39,6 +40,7 @@ const agencyData = [
     id: 5,
     title: "Stockholm City Center",
     address: "City Central, Stockholm",
+    desc: "Located in the heart of City Central, Stockholm, this agency offers a temporary yet vibrant space. Immerse yourself in the city's energy while finding your ideal car with trustworthy dealers in this dynamic urban setting.",
     desc: "Located in the heart of City Central, Stockholm, this agency offers a temporary yet vibrant space. Immerse yourself in the city's energy while finding your ideal car with trustworthy dealers in this dynamic urban setting.",
     location:
       "https://www.google.com/maps/place/Ormsaltaren,+116+46+Stokholm/@59.3190094,18.0298154,13z/data=!3m1!4b1!4m6!3m5!1s0x465f77e4b408d7b5:0xa25cf9683eb727a6!8m2!3d59.3189726!4d18.0710147!16s%2Fg%2F11dyhz4y6?entry=ttu",
