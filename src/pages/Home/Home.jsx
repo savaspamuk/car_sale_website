@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import FindCarForm from "../../components/UI/FindCarForm/FindCarForm";
 import AboutSection from "../../components/UI/AboutSection/AboutSection";
 import AgencyList from "../../components/UI/AgencyList/AgencyList";
-import CarItem from "../../components/UI/CarItem/CarItem";
+import Cars from "../../components/UI/Cars/Cars";
 import BlogList from "../../components/UI/BlogList/BlogList";
 
 const Home = () => {
@@ -70,7 +70,7 @@ const Home = () => {
                 Check out the vehicles on our list
               </h4>
             </Col>
-            <CarItem cars={displayCars} />
+            <Cars cars={displayCars} />
           </Row>
         </Container>
       </section>

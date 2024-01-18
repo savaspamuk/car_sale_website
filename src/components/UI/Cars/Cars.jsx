@@ -1,9 +1,9 @@
 import React from "react";
 import { Col } from "reactstrap";
-import "./CarItem.css";
+import "./Cars.css";
 import CarForSale from "../../../assets/images/car-for-sale.png";
 
-const CarItem = ({ cars }) => {
+const Cars = ({ cars }) => {
   return (
     <>
       {cars.map((car, index) => (
@@ -47,4 +47,4 @@ const CarItem = ({ cars }) => {
   );
 };
 
-export default CarItem;
+export default Cars;
