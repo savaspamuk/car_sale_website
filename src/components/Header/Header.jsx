@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
 import HeaderLogo from "../../assets/images/header-logo.png";
-import HeaderLogo from "../../assets/images/header-logo.png";
 import "./Header.css";
 
 const navLinks = [
@@ -24,8 +23,6 @@ const Header = () => {
             <Col lg="6" md="6" sm="6">
               <div>
                 <span>Do you want to buy a car?</span>
-              <div>
-                <span>Do you want to buy a car?</span>
               </div>
             </Col>
             <Col lg="6" md="6" sm="6">
@@ -46,16 +43,9 @@ const Header = () => {
         <Container>
           <Row className="header__middle-items">
             <Col lg="3" md="3" sm="4">
-          <Row className="header__middle-items">
-            <Col lg="3" md="3" sm="4">
               <div className="logo">
                 <h1>
                   <a href="/">
-                    <img src={HeaderLogo} alt="Left-Logo" />
-                    <div>
-                      <span>Buy ↴</span>
-                      <span>_A Car</span>
-                    </div>
                     <img src={HeaderLogo} alt="Left-Logo" />
                     <div>
                       <span>Buy ↴</span>
@@ -68,7 +58,6 @@ const Header = () => {
             <Col lg="3" md="3" sm="4">
               <div className="header__location">
                 <span>
-                  <i class="ri-road-map-line"></i>
                   <i class="ri-road-map-line"></i>
                 </span>
                 <div className="header__location-content">
@@ -89,14 +78,6 @@ const Header = () => {
               </div>
             </Col>
             <Col lg="2" md="3" sm="0">
-              <div className="header__location">
-                <span>
-                  <i class="ri-customer-service-2-line"></i>
-                </span>
-                <button className="header__btn btn">
-                  <a href="tel: +46 123 456 78 90">CALL US NOW</a>
-                </button>
-              </div>
               <div className="header__location">
                 <span>
                   <i class="ri-customer-service-2-line"></i>
