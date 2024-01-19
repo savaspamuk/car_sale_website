@@ -21,7 +21,7 @@ const LoginPage = () => {
 
   return (
     <Form onSubmit={signIn}>
-      <div className="form">
+      <div className="login-register-form">
         <p className="section__title">Enter your information</p>
         <p className="section__subtitle">
           New user?
