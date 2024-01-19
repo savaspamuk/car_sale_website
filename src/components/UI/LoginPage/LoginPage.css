@@ -1,0 +1,41 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+}
+
+.form__group {
+    padding: 0;
+}
+
+.section__title {
+    margin: 0;
+}
+
+.section__subtitle {
+    text-align: center;
+    color: var(--main-color);
+}
+
+.section__subtitle a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--main-highlight-color);
+}
+
+.login-btn {
+    background: var(--main-highlight-color) !important;
+    color: var(--main-text-color) !important;
+    padding: 8px 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.login-btn:hover {
+    opacity: 90%;
+    color: var(--main-text-color) !important;
+}

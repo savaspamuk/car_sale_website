@@ -6,17 +6,7 @@
     justify-content: space-between;
 }
   
-  .header__top__right a {
-    text-decoration: none;
-    color: var(--main-text-color);
-    font-size: 0.9rem;
-  }
-  
-  .header__top__right a:hover {
-    color: var(--main-text-color);
-  }
-
-  .header__middle {
+.header__middle {
     padding: 10px 0;
   }
 
@@ -173,6 +163,11 @@
     color: var(--main-highlight-color);
   }
 
+  .nav__right {
+    display: flex;
+    gap: 20px;
+  }
+
   .search__box {
     border: 1px solid var(--section-description);
     padding: 7px 12px;
@@ -195,17 +190,44 @@
     cursor: pointer;
   }
 
+  .nav__right__register {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .nav__right__register a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  
+  .nav__right__register a:hover {
+    color: var(--main-highlight-color);
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .nav__right {
+      justify-content: flex-end;
+    }
+
+    .search__box {
+      width: 40%;
+    }
+
+    .search__box input {
+      width: 70%;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .header__top,
-    .header__middle,
-    .nav__right {
+    .header__middle {
       display: none;
     }
   
-    .mobile__menu {
-      display: block;
-    }
-  
+    
     .navigation {
       background: var(--main-color);
       width: 100%;
@@ -237,41 +259,20 @@
     .menu__active {
       display: block;
     }
-  }
-
-  @media only screen and (max-width: 768px) {
-
-    .header__top, .header__middle, .nav__right {
-      display: none;
-    }
 
     .mobile__menu {
       display: block;
     }
 
-    .navigation {
-      background: var(--main-color);
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 100;
+    .nav__right {
+      justify-content: flex-end;
     }
 
-    .menu {
-      width: 250px;
-      height: 100%;
-      background: var(--main-text-color);
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      row-gap: 2rem;
+    .search__box {
+      width: 50%;
     }
-    
-    .menu a {
-      color: var(--main-color);
-      font-weight: 600;
-      font-size: 0.9rem;
+
+    .search__box input {
+      width: 80%;
     }
   }

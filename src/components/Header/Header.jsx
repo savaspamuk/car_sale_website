@@ -25,17 +25,6 @@ const Header = () => {
                 <span>Do you want to buy a car?</span>
               </div>
             </Col>
-            <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <a href="#" className=" d-flex align-items-center gap-1">
-                  <i class="ri-login-circle-line"></i> Login
-                </a>
-
-                <a href="#" className=" d-flex align-items-center gap-1">
-                  <i class="ri-user-line"></i> Register
-                </a>
-              </div>
-            </Col>
           </Row>
         </Container>
       </div>
@@ -106,7 +95,17 @@ const Header = () => {
                 ))}
               </div>
             </div>
+
             <div className="nav__right">
+              <div className="nav__right__register">
+                <a href="/login">
+                  <i class="ri-login-circle-line"></i> Login
+                </a>
+
+                <a href="register">
+                  <i class="ri-user-line"></i> Register
+                </a>
+              </div>
               <div className="search__box">
                 <input type="text" placeholder="Search" />
                 <span>
