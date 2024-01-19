@@ -3,15 +3,18 @@ import { Form, FormGroup } from "reactstrap";
 import "./RegisterPage.css";
 import { auth, app } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate("");
 
   const register = (event) => {
     event.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        navigate("/login");
         console.log(userCredential);
       })
       .catch((error) => {
