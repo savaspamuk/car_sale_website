@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .contact__form-container {
@@ -12,6 +14,11 @@
 .contact__form input, .contact__form textarea {
     width: 100%;
     border-radius: 5px;
+}
+
+.contact__info {
+    display: flex;
+    gap: 30px;
 }
 
 .social__link-icon {
@@ -62,6 +69,10 @@
 
     .contact__btn {
     margin: 0 auto 40px;
+}
+
+.contact__info {
+    justify-content: center;
 }
 
 h6, p {

@@ -14,7 +14,6 @@ const CarListing = () => {
         const response = await fetch("https://freetestapi.com/api/v1/cars");
         const data = await response.json();
         setCars(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -31,7 +30,6 @@ const CarListing = () => {
       );
       const data = await response.json();
       setCars(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching sorted data:", error);
     }
