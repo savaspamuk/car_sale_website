@@ -14,21 +14,19 @@ import SearchResults from "../pages/SearchResults/SearchResults";
 
 const Routers = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/cars" element={<CarListing />} />
-        <Route path="/car-details" element={<CarDetails />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blog-details" element={<BlogDetails />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/results" element={<SearchResults />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/cars" element={<CarListing />} />
+      <Route path="/car-details" element={<CarDetails />} />
+      <Route path="/blogs" element={<Blog />} />
+      <Route path="/blog-details" element={<BlogDetails />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/results" element={<SearchResults />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 

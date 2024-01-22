@@ -4,18 +4,21 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import React from "react";
 import { GetListProvider } from "./context/getCarList";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <GetListProvider>
-      <div className="App">
-        <Header />
-        <div>
-          <Routers />
+    <BrowserRouter>
+      <GetListProvider>
+        <div className="App">
+          <Header />
+          <div>
+            <Routers />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </GetListProvider>
+      </GetListProvider>
+    </BrowserRouter>
   );
 }
 

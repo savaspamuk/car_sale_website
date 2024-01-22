@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useState } from "react";
 
 const GetListContext = createContext();
 
@@ -7,21 +6,12 @@ const GetListProvider = ({ children }) => {
   const [cars, setCars] = useState([]);
   const [makeModel, setMakeModel] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    async function getCars() {
-      try {
-        const response = await fetch("https://freetestapi.com/api/v1/cars");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    getCars();
-  }, []);
+  const getCars = async () => {
+    const response = await fetch("https://freetestapi.com/api/v1/cars");
+    const data = await response.json();
+    setCars(data);
+  };
 
   const handleSort = async (event) => {
     const selectedSort = event.target.value;
@@ -47,13 +37,16 @@ const GetListProvider = ({ children }) => {
     console.log(data);
 
     setSearchResults(data);
-    navigate("/results", { state: { results: data } });
   };
 
   const contextValue = {
     cars,
     handleSort,
     handleSubmit,
+    getCars,
+    makeModel,
+    setMakeModel,
+    searchResults,
   };
 
   return (

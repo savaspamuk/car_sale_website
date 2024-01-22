@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { useNavigate } from "react-router-dom";
 import { GetListContext } from "../../../context/getCarList";
 
 const FindCarForm = () => {
+  const navigate = useNavigate();
   const {
     makeModel,
     setMakeModel,
@@ -17,11 +18,19 @@ const FindCarForm = () => {
     fuelType,
     setFuelType,
     handleSubmit,
+    searchResults,
   } = useContext(GetListContext);
-  const navigate = useNavigate();
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    handleSubmit(event);
+    navigate("/results", { state: { results: searchResults } });
+  };
+
+  console.log(makeModel);
 
   return (
-    <Form onSubmit={(e) => handleSubmit(e, makeModel, navigate)}>
+    <Form onSubmit={handleFormSubmit}>
       <div className="form">
         <FormGroup className="form__group">
           <input

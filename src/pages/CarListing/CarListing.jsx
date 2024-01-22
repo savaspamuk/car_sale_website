@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./CarListing.css";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
@@ -7,7 +7,12 @@ import Cars from "../../components/UI/Cars/Cars";
 import { GetListContext } from "../../context/getCarList";
 
 const CarListing = () => {
-  const { cars, handleSort } = useContext(GetListContext);
+  const { cars, handleSort, getCars } = useContext(GetListContext);
+
+  useEffect(() => {
+    getCars();
+  }, []);
+
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
