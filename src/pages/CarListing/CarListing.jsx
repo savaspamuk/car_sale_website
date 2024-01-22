@@ -1,39 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./CarListing.css";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import Cars from "../../components/UI/Cars/Cars";
+import { GetListContext } from "../../context/getCarList";
 
 const CarListing = () => {
-  const [cars, setCars] = useState([]);
-
-  useEffect(() => {
-    async function getCars() {
-      try {
-        const response = await fetch("https://freetestapi.com/api/v1/cars");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    getCars();
-  }, []);
-
-  const handleSort = async (event) => {
-    const selectedSort = event.target.value;
-    try {
-      const response = await fetch(
-        `https://freetestapi.com/api/v1/cars?sort=name&order=${selectedSort}`
-      );
-      const data = await response.json();
-      setCars(data);
-    } catch (error) {
-      console.error("Error fetching sorted data:", error);
-    }
-  };
+  const { cars, handleSort } = useContext(GetListContext);
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />

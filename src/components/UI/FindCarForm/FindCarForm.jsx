@@ -1,32 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { GetListContext } from "../../../context/getCarList";
 
 const FindCarForm = () => {
-  const [makeModel, setMakeModel] = useState("");
-  const [transmission, setTransmission] = useState("automatic");
-  const [year, setYear] = useState("");
-  const [budget, setBudget] = useState("");
-  const [fuelType, setFuelType] = useState("gasoline");
-  const [searchResults, setSearchResults] = useState([]);
+  const {
+    makeModel,
+    setMakeModel,
+    transmission,
+    setTransmission,
+    year,
+    setYear,
+    budget,
+    setBudget,
+    fuelType,
+    setFuelType,
+    handleSubmit,
+  } = useContext(GetListContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const response = await fetch(
-      `https://freetestapi.com/api/v1/cars?search=${makeModel}`
-    );
-    const data = await response.json();
-
-    console.log(data);
-
-    setSearchResults(data);
-    navigate("/results", { state: { results: data } });
-  };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={(e) => handleSubmit(e, makeModel, navigate)}>
       <div className="form">
         <FormGroup className="form__group">
           <input

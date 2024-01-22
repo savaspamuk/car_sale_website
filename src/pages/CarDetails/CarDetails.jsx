@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./CarDetails.css";
 import Helmet from "../../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 import { useParams } from "react-router-dom";
 import CarForSale from "../../assets/images/car-for-sale.png";
+import { GetListContext } from "../../context/getCarList";
 
 const CarDetails = () => {
-  const [cars, setCars] = useState([]);
+  const { cars, handleSort } = useContext(GetListContext);
   const { model } = useParams();
-
-  useEffect(() => {
-    async function getCars() {
-      try {
-        const response = await fetch("https://freetestapi.com/api/v1/cars");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    getCars();
-  }, []);
 
   const singleCarItem = cars.find((item) => item.carName === model);
   if (!singleCarItem) {
