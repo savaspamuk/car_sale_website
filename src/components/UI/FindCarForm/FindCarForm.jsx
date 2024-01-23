@@ -32,15 +32,24 @@ const FindCarForm = () => {
   return (
     <Form onSubmit={handleFormSubmit}>
       <div className="form">
-        <FormGroup className="form__group">
-          <input
-            type="text"
-            placeholder="Make/Model"
-            value={makeModel}
-            onChange={(e) => setMakeModel(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup className="select__group">
+        <div className="form__description">
+          <h6>Which model are you looking for?</h6>
+          <div className="form__description explanation">
+            <span className="section__description">*For example "corolla"</span>
+            <i class="ri-search-line"></i>
+            <i class="ri-roadster-fill"></i>
+          </div>
+        </div>
+        <div>
+          <FormGroup className="form__group">
+            <input
+              type="text"
+              placeholder="Enter a car model to search"
+              value={makeModel}
+              onChange={(e) => setMakeModel(e.target.value)}
+            />
+          </FormGroup>
+          {/* <FormGroup className="select__group">
           <select
             value={transmission}
             onChange={(e) => setTransmission(e.target.value)}
@@ -73,13 +82,14 @@ const FindCarForm = () => {
             <option value="gasoline">Gasoline</option>
             <option value="electric">Electric</option>
           </select>
-        </FormGroup>
+        </FormGroup> */}
 
-        <FormGroup className="form__group">
-          <button type="submit" className="btn find__car-btn">
-            Find Car
-          </button>
-        </FormGroup>
+          <FormGroup className="form__group">
+            <button type="submit" className="btn find__car-btn">
+              Find Car
+            </button>
+          </FormGroup>
+        </div>
       </div>
     </Form>
   );
