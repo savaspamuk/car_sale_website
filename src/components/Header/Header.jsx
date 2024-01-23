@@ -20,9 +20,10 @@ const Header = () => {
       <div className="header__top">
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="6">
-              <div>
+            <Col>
+              <div className="header__slogan">
                 <span>Do you want to buy a car?</span>
+                <span>You are in the right place!</span>
               </div>
             </Col>
           </Row>

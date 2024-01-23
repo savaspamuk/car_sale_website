@@ -9,17 +9,19 @@ const FindCarForm = () => {
   const {
     makeModel,
     setMakeModel,
-    transmission,
-    setTransmission,
-    year,
-    setYear,
-    budget,
-    setBudget,
-    fuelType,
-    setFuelType,
+    // transmission,
+    // setTransmission,
+    // year,
+    // setYear,
+    // budget,
+    // setBudget,
+    // fuelType,
+    // setFuelType,
     handleSubmit,
     searchResults,
   } = useContext(GetListContext);
+
+  // Search API lets only 1 parameter (model) to be passed, so I had to comment out the rest of the parameters
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +37,7 @@ const FindCarForm = () => {
         <div className="form__description">
           <h6>Which model are you looking for?</h6>
           <div className="form__description explanation">
-            <span className="section__description">*For example "corolla"</span>
+            <span className="section__description">*For example "Corolla"</span>
             <i class="ri-search-line"></i>
             <i class="ri-roadster-fill"></i>
           </div>

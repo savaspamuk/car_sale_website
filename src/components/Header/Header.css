@@ -5,6 +5,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.header__slogan {
+  display: flex;
+  justify-content: space-between;
+}
   
 .header__middle {
     padding: 10px 0;

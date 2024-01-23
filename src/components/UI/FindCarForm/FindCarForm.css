@@ -117,4 +117,8 @@
         width: 100%;
         font-size: 0.8rem;
     }
+
+    .form__description {
+        justify-content: center;
+    }
   }
