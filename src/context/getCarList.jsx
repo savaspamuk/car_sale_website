@@ -2,10 +2,11 @@ import React, { createContext, useState } from "react";
 
 const GetListContext = createContext();
 
+const GetListSearchContext = createContext();
+
 const GetListProvider = ({ children }) => {
   const [cars, setCars] = useState([]);
   const [makeModel, setMakeModel] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   const getCars = async () => {
     const response = await fetch("https://freetestapi.com/api/v1/cars");
@@ -25,7 +26,23 @@ const GetListProvider = ({ children }) => {
       console.error("Error fetching sorted data:", error);
     }
   };
+  const contextValue = {
+    cars,
+    getCars,
+    handleSort,
+    makeModel,
+    setMakeModel,
+  };
+  return (
+    <GetListContext.Provider value={contextValue}>
+      {children}
+    </GetListContext.Provider>
+  );
+};
 
+const GetListSearchProvider = ({ children }) => {
+  const [searchResults, setSearchResults] = useState([]);
+  const [makeModel, setMakeModel] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -34,26 +51,29 @@ const GetListProvider = ({ children }) => {
     );
     const data = await response.json();
 
-    console.log(data);
+    console.log("API response:", data);
 
     setSearchResults(data);
+    return data;
   };
 
   const contextValue = {
-    cars,
-    handleSort,
     handleSubmit,
-    getCars,
+    searchResults,
     makeModel,
     setMakeModel,
-    searchResults,
   };
 
   return (
-    <GetListContext.Provider value={contextValue}>
+    <GetListSearchContext.Provider value={contextValue}>
       {children}
-    </GetListContext.Provider>
+    </GetListSearchContext.Provider>
   );
 };
 
-export { GetListProvider, GetListContext };
+export {
+  GetListProvider,
+  GetListContext,
+  GetListSearchProvider,
+  GetListSearchContext,
+};

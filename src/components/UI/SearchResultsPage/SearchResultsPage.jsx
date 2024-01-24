@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./SearchResultsPage.css";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
-import { GetListContext } from "../../../context/getCarList";
+import { GetListSearchContext } from "../../../context/getCarList";
 
 const SearchResultsPage = () => {
   const {
@@ -19,7 +19,7 @@ const SearchResultsPage = () => {
     setFuelType,
     handleSubmit,
     searchResults,
-  } = useContext(GetListContext);
+  } = useContext(GetListSearchContext);
   return (
     <div className="search__results">
       <div className="search__items">

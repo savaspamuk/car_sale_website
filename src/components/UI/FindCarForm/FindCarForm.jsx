@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { GetListContext } from "../../../context/getCarList";
+import { GetListSearchContext } from "../../../context/getCarList";
 
 const FindCarForm = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const FindCarForm = () => {
     // setFuelType,
     handleSubmit,
     searchResults,
-  } = useContext(GetListContext);
+  } = useContext(GetListSearchContext);
 
   // Search API lets only 1 parameter (model) to be passed, so I had to comment out the rest of the parameters
 
