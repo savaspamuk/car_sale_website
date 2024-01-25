@@ -4,22 +4,25 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import React from "react";
 import { GetListProvider, GetListSearchProvider } from "./context/ListProvider";
+import { CarsProvider } from "../src/context/CarsProvider";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-      <GetListProvider>
-        <GetListSearchProvider>
-          <div className="App">
-            <Header />
-            <div>
-              <Routers />
+      <CarsProvider>
+        <GetListProvider>
+          <GetListSearchProvider>
+            <div className="App">
+              <Header />
+              <div>
+                <Routers />
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </GetListSearchProvider>
-      </GetListProvider>
+          </GetListSearchProvider>
+        </GetListProvider>
+      </CarsProvider>
     </BrowserRouter>
   );
 }
