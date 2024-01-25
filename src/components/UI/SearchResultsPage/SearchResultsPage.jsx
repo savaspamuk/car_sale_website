@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./SearchResultsPage.css";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
-import { GetListSearchContext } from "../../../context/getCarList";
+import { GetListSearchContext } from "../../../context/ListProvider";
 
 const SearchResultsPage = () => {
   const {

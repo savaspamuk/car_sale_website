@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import Cars from "../../components/UI/Cars/Cars";
-import { GetListContext } from "../../context/getCarList";
+import { GetListContext } from "../../context/ListProvider";
 
 const CarListing = () => {
   const { cars, handleSort, getCars } = useContext(GetListContext);
