@@ -1,32 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { GetListSearchContext } from "../../../context/ListProvider";
+import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
 
 const FindCarForm = () => {
   const navigate = useNavigate();
-  const {
-    makeModel,
-    setMakeModel,
-    // transmission,
-    // setTransmission,
-    // year,
-    // setYear,
-    // budget,
-    // setBudget,
-    // fuelType,
-    // setFuelType,
-    handleSubmit,
-    searchResults,
-  } = useContext(GetListSearchContext);
-
-  // Search API lets only 1 parameter (model) to be passed, so I had to comment out the rest of the parameters
+  const { makeModel, handleSearch } = useCarsContext();
+  const setMakeModel = useCarsDispatch();
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    handleSubmit(event);
-    navigate("/results", { state: { results: searchResults } });
+    handleSearch(makeModel);
+    navigate("/results");
   };
 
   console.log(makeModel);
@@ -51,41 +37,6 @@ const FindCarForm = () => {
               onChange={(e) => setMakeModel(e.target.value)}
             />
           </FormGroup>
-          {/* <FormGroup className="select__group">
-          <select
-            value={transmission}
-            onChange={(e) => setTransmission(e.target.value)}
-          >
-            <option value="automatic">Automatic</option>
-            <option value="manuel">Manuel</option>
-          </select>
-        </FormGroup>
-        <FormGroup className="form__group">
-          <input
-            type="number"
-            placeholder="Year"
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup className="form__group">
-          <input
-            type="number"
-            placeholder="Budget (€)"
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup className="select__group">
-          <select
-            value={fuelType}
-            onChange={(e) => setFuelType(e.target.value)}
-          >
-            <option value="gasoline">Gasoline</option>
-            <option value="electric">Electric</option>
-          </select>
-        </FormGroup> */}
-
           <FormGroup className="form__group">
             <button type="submit" className="btn find__car-btn">
               Find Car

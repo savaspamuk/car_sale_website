@@ -4,10 +4,10 @@ import Helmet from "../../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 import { useParams } from "react-router-dom";
 import CarForSale from "../../assets/images/car-for-sale.png";
-import { GetListContext } from "../../context/ListProvider";
+import { useCarsContext } from "../../context/CarsProvider";
 
 const CarDetails = () => {
-  const { cars } = useContext(GetListContext);
+  const { cars } = useCarsContext();
   const { model } = useParams();
 
   const singleCarItem = cars.find((item) => item.carName === model);

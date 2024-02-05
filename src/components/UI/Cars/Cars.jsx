@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Col } from "reactstrap";
 import "./Cars.css";
 import CarForSale from "../../../assets/images/car-for-sale.png";
+import { useCarsContext } from "../../../context/CarsProvider";
 
-const Cars = ({ cars }) => {
+const Cars = () => {
+  const { cars } = useCarsContext();
   return (
     <>
       {cars.map((car, index) => (

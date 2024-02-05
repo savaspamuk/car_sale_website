@@ -3,28 +3,27 @@ import { useLocation } from "react-router-dom";
 import "./SearchResultsPage.css";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
-import { GetListSearchContext } from "../../../context/ListProvider";
+import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
 
 const SearchResultsPage = () => {
-  const {
-    makeModel,
-    setMakeModel,
-    transmission,
-    setTransmission,
-    year,
-    setYear,
-    budget,
-    setBudget,
-    fuelType,
-    setFuelType,
-    handleSubmit,
-    searchResults,
-  } = useContext(GetListSearchContext);
+  const { cars, handleSearch } = useCarsContext();
+  const setMakeModel = useCarsDispatch();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const makeModel = searchParams.get("makeModel");
+
+  React.useEffect(() => {
+    if (makeModel) {
+      handleSearch(makeModel);
+      setMakeModel(makeModel);
+    }
+  }, [makeModel, handleSearch, setMakeModel]);
+
   return (
     <div className="search__results">
       <div className="search__items">
-        {searchResults ? (
-          searchResults.map((result, index) => (
+        {cars ? (
+          cars.map((result, index) => (
             <Col key={index} lg="4" md="4" sm="6" className="mb-5">
               <div className="car__item">
                 <div className="car__img">
