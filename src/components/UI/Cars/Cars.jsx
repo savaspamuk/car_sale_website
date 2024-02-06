@@ -19,7 +19,7 @@ const Cars = () => {
               <h6 className="car__price">€{car.price}</h6>
               <div className="car__item-info">
                 <span>
-                  <i class="ri-palette-line"></i>
+                  <i className="ri-palette-line"></i>
                   {` ${car.color}`}
                 </span>
                 <span>
