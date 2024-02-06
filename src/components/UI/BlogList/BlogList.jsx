@@ -29,10 +29,10 @@ const BlogItem = ({ item }) => {
             </p>
             <div className="blog__tag">
               <span className="blog__author">
-                <i class="ri-user-3-line"></i> {author}
+                <i className="ri-user-3-line"></i> {author}
               </span>
               <span className="blog__author">
-                <i class="ri-calendar-2-line"></i> {date}
+                <i className="ri-calendar-2-line"></i> {date}
               </span>
             </div>
           </div>
