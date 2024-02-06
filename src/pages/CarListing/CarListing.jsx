@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './CarListing.css';
 import { Container, Row, Col } from 'reactstrap';
 import Helmet from '../../components/Helmet/Helmet';
@@ -6,26 +6,40 @@ import CommonSection from '../../components/UI/CommonSection/CommonSection';
 import Cars from '../../components/UI/Cars/Cars';
 import {
 	useCarsContext,
-	useCarsDispatch,
-	CarsActionType,
 } from '../../context/CarsProvider';
 
 const CarListing = () => {
 	const { cars } = useCarsContext();
-	const dispatch = useCarsDispatch();
+	const [sorting, setSorting] = useState(undefined);
+	const [sortedCars, setSortedCars] = useState([]);
+
+	useEffect(() => {
+		if (sorting === 'asc') {
+			const sortedResult = [...cars].sort((a, b) => {
+				const carAKey = `${a.year} ${a.make} ${a.model}`;
+				const carBKey = `${b.year} ${b.make} ${b.model}`;
+
+				return carAKey.localeCompare(carBKey);
+			});
+			setSortedCars(sortedResult);
+		} else if (sorting === 'des') {
+			const sortedResult = [...cars].sort((a, b) => {
+
+				const carAKey = `${a.year} ${a.make} ${a.model}`;
+				const carBKey = `${b.year} ${b.make} ${b.model}`;
+
+				return carBKey.localeCompare(carAKey);
+			});
+			setSortedCars(sortedResult);
+		} else {
+			setSortedCars(cars);
+		}
+	}, [sorting, cars]);
 
 	const handleSort = async (event) => {
 		const selectedSort = event.target.value;
-		try {
-			const response = await fetch(
-				`https://freetestapi.com/api/v1/cars?sort=name&order=${selectedSort}`
-			);
-			const data = await response.json();
-			if (data) {
-				dispatch({ type: CarsActionType.SET_CARS, payload: data });
-			}
-		} catch (error) {
-			console.error('Error fetching sorted data:', error);
+		if (selectedSort === 'asc' || selectedSort === 'des') {
+			setSorting(selectedSort);
 		}
 	};
 
@@ -47,7 +61,7 @@ const CarListing = () => {
 								</select>
 							</div>
 						</Col>
-						<Cars cars={cars} />
+						<Cars cars={sortedCars} />
 					</Row>
 				</Container>
 			</section>

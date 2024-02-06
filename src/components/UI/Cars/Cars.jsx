@@ -5,8 +5,8 @@ import "./Cars.css";
 const Cars = ({cars}) => {
   return (
     <>
-      {cars && cars.map((car, index) => (
-        <Col key={index} lg="4" md="4" sm="6" className="mb-5">
+      {cars && cars.map((car) => (
+        <Col key={`${car.year} ${car.make} ${car.model}`} lg="4" md="4" sm="6" className="mb-5">
           <div className="car__item">
             <div className="car__img">
               <img src={CarForSale} alt="Car" />
