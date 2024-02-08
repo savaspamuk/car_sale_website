@@ -7,14 +7,25 @@ import AboutSection from "../../components/UI/AboutSection/AboutSection";
 import AgencyList from "../../components/UI/AgencyList/AgencyList";
 import Cars from "../../components/UI/Cars/Cars";
 import BlogList from "../../components/UI/BlogList/BlogList";
-import {
-	useCarsContext,
-	useCarsDispatch,
-	CarsActionType,
-} from '../../context/CarsProvider';
 
 const Home = () => {
-	const {cars} = useCarsContext();
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    async function getCars() {
+      try {
+        const response = await fetch("https://freetestapi.com/api/v1/cars");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    getCars();
+  }, []);
+
+  const displayCars = cars.slice(0, 6);
 
   return (
     <Helmet title="Home">
@@ -50,19 +61,21 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {cars && <section>
-        <Container>
-          <Row>
-            <Col lg="12">
-              <h6 className="section__subtitle">Car List</h6>
-              <h4 className="section__title">
-                Check out the vehicles on our list
-              </h4>
-            </Col>
-            <Cars cars={cars.slice(0, 6)} />
-          </Row>
-        </Container>
-      </section>}
+      {
+        <section>
+          <Container>
+            <Row>
+              <Col lg="12">
+                <h6 className="section__subtitle">Car List</h6>
+                <h4 className="section__title">
+                  Check out the vehicles on our list
+                </h4>
+              </Col>
+              <Cars cars={displayCars} />
+            </Row>
+          </Container>
+        </section>
+      }
 
       <section>
         <Container>

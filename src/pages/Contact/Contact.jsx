@@ -43,8 +43,12 @@ const Contact = () => {
                   <div>
                     <h6>Contact Information</h6>
                     <p className="section__description">
-                      <a href="https://www.google.com/maps/place/411+06+Nordstaden/@57.7069787,11.9276906,13z/data=!3m1!4b1!4m6!3m5!1s0x464ff36444097555:0xf5b54137131e1636!8m2!3d57.70694!4d11.96889!16s%2Fg%2F11rbh4kvsp?entry=ttu" target="_blank" rel="noreferrer">
-                        <i className="ri-map-pin-2-fill"></i> 123, Göteborg, Sweden
+                      <a
+                        href="https://www.google.com/maps/place/411+06+Nordstaden/@57.7069787,11.9276906,13z/data=!3m1!4b1!4m6!3m5!1s0x464ff36444097555:0xf5b54137131e1636!8m2!3d57.70694!4d11.96889!16s%2Fg%2F11rbh4kvsp?entry=ttu"
+                        target="_blank"
+                      >
+                        <i className="ri-map-pin-2-fill"></i> 123, Göteborg,
+                        Sweden
                       </a>
                     </p>
                   </div>

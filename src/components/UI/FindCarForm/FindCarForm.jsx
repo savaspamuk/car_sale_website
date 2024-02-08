@@ -1,28 +1,21 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { useCarsDispatch, CarsActionType } from "../../../context/CarsProvider";
-import {useState} from 'react';
+import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
 
 const FindCarForm = () => {
   const navigate = useNavigate();
-  const dispatch = useCarsDispatch();
-  const [makeModel, setMakeModel] = useState();
+  const { makeModel, handleSearch } = useCarsContext();
+  const setMakeModel = useCarsDispatch();
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    const cleansedMakeModel = makeModel.trim().toLowerCase();
-    try {
-      const response = await fetch(
-        `https://freetestapi.com/api/v1/cars?search=${cleansedMakeModel}`
-      );
-      const data = await response.json();
-      dispatch({ type: CarsActionType.SET_SEARCH_RESULT, payload: data });
-    } catch (error) {
-      console.error("Error fetching search results:", error);
-    }
+    handleSearch(makeModel);
     navigate("/results");
   };
+
+  console.log(makeModel);
 
   return (
     <Form onSubmit={handleFormSubmit}>
