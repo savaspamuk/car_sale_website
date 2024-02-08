@@ -1,48 +1,72 @@
-import { useReducer, createContext, useContext } from "react";
+import { useReducer, createContext, useContext, useState } from "react";
 
-const initialCarsState = { cars: [], makeModel: "", searchResult: []};
+const initialCarsState = { cars: [], makeModel: "" };
 
+const CarsActionType = {
+  SET_CARS: "setCars",
+  SET_MAKEMODEL: "setMakeModel",
+};
 
-export const CarsContext = createContext();
-export const CarsDispatchContext = createContext();
+export const CarsContext = createContext(initialCarsState);
+export const CarsDispatchContext = createContext(null);
 
-export const CarsProvider = ({ children }) => {
+export const CarsProvider = ({ children, initialState }) => {
+  const [cars, setCars] = useState([]);
   const [state, dispatch] = useReducer(
     carsReducer,
-    initialCarsState
+    initialState ?? initialCarsState
   );
+
+  const getCars = async () => {
+    const response = await fetch("https://freetestapi.com/api/v1/cars");
+    const data = await response.json();
+    dispatch({ type: CarsActionType.SET_CARS, payload: data });
+  };
+
+  const handleSort = async (event) => {
+    const selectedSort = event.target.value;
+    try {
+      const response = await fetch(
+        `https://freetestapi.com/api/v1/cars?sort=name&order=${selectedSort}`
+      );
+      const data = await response.json();
+      dispatch({ type: CarsActionType.SET_CARS, payload: data });
+    } catch (error) {
+      console.error("Error fetching sorted data:", error);
+    }
+  };
+
+  const setMakeModel = (makeModel) => {
+    dispatch({ type: CarsActionType.SET_MAKEMODEL, payload: makeModel });
+  };
+
+  const handleSearch = async (makeModel) => {
+    try {
+      const response = await fetch(
+        `https://freetestapi.com/api/v1/cars?search=${makeModel}`
+      );
+      const data = await response.json();
+      dispatch({ type: CarsActionType.SET_CARS, payload: data });
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
+  };
 
   return (
     <CarsContext.Provider
-      value={state}
+      value={{ ...state, getCars, handleSort, handleSearch }}
     >
-      <CarsDispatchContext.Provider value={dispatch}>
+      <CarsDispatchContext.Provider value={setMakeModel}>
         {children}
       </CarsDispatchContext.Provider>
     </CarsContext.Provider>
   );
 };
 
-export const CarsActionType = {
-  SET_CARS: "setCars",
-  UPDATE_CARS: "updateCars",
-  SET_MAKEMODEL: "setMakeModel",
-  SET_SEARCH_RESULT: "setSearchResult"
-};
-
 function carsReducer(state, action) {
   switch (action.type) {
     case CarsActionType.SET_CARS: {
       return { ...state, cars: action.payload };
-    }
-    case CarsActionType.UPDATE_CARS: {
-      const existingIds = new Set(state.cars.map(car => car.id));
-      const uniqueNewCars = action.payload.filter(car => !existingIds.has(car.id));
-    
-      return  {...state, cars: [...state.cars, ...uniqueNewCars]};
-    }
-    case CarsActionType.SET_SEARCH_RESULT: {
-      return { ...state, searchResult: action.payload };
     }
     case CarsActionType.SET_MAKEMODEL: {
       return { ...state, makeModel: action.payload };
