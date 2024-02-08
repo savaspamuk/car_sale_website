@@ -2,14 +2,28 @@ import "./App.css";
 import Routers from "../src/routers/Routers";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import React from "react";
-import { CarsProvider } from "../src/context/CarsProvider";
+import {useEffect} from "react";
+
 import { BrowserRouter } from "react-router-dom";
+import {
+	useCarsDispatch,
+	CarsActionType,
+} from './context/CarsProvider';
 
 function App() {
+  const dispatch = useCarsDispatch();
+
+	useEffect(() => {
+			fetch('https://freetestapi.com/api/v1/cars')
+			.then((response) => response.json())
+			.then((data) => {
+				if (data) dispatch({ type: CarsActionType.SET_CARS, payload: data });
+			})
+			.catch((error) => console.error('Unable to fetch cars data', error));
+	}, []);
+
   return (
-    <BrowserRouter>
-      <CarsProvider>
+      <BrowserRouter>
         <div className="App">
           <Header />
           <div>
@@ -17,7 +31,6 @@ function App() {
           </div>
           <Footer />
         </div>
-      </CarsProvider>
     </BrowserRouter>
   );
 }

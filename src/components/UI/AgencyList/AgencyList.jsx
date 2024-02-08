@@ -13,7 +13,7 @@ const AgencyItem = ({ item }) => (
       <h6>{item.address}</h6>
       <p className="section__description">{item.desc}</p>
       <a href={item.location} target="_blank">
-        <i class="ri-map-pin-range-fill"></i>
+        <i className="ri-map-pin-range-fill"></i>
         <span>Click to see on map</span>
       </a>
     </div>

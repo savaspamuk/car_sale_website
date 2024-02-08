@@ -1,21 +1,28 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
+import { useCarsDispatch, CarsActionType } from "../../../context/CarsProvider";
+import {useState} from 'react';
 
 const FindCarForm = () => {
   const navigate = useNavigate();
-  const { makeModel, handleSearch } = useCarsContext();
-  const setMakeModel = useCarsDispatch();
+  const dispatch = useCarsDispatch();
+  const [makeModel, setMakeModel] = useState();
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    handleSearch(makeModel);
+    const cleansedMakeModel = makeModel.trim().toLowerCase();
+    try {
+      const response = await fetch(
+        `https://freetestapi.com/api/v1/cars?search=${cleansedMakeModel}`
+      );
+      const data = await response.json();
+      dispatch({ type: CarsActionType.SET_SEARCH_RESULT, payload: data });
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
     navigate("/results");
   };
-
-  console.log(makeModel);
 
   return (
     <Form onSubmit={handleFormSubmit}>
@@ -24,8 +31,8 @@ const FindCarForm = () => {
           <h6>Which model are you looking for?</h6>
           <div className="form__description explanation">
             <span className="section__description">*For example "Corolla"</span>
-            <i class="ri-search-line"></i>
-            <i class="ri-roadster-fill"></i>
+            <i className="ri-search-line"></i>
+            <i className="ri-roadster-fill"></i>
           </div>
         </div>
         <div>
