@@ -1,0 +1,54 @@
+.login-register-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+}
+
+.section__title {
+    margin: 0;
+}
+
+.section__subtitle {
+    text-align: left;
+    color: var(--main-color);
+}
+
+.section__subtitle a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--main-highlight-color);
+}
+
+.register-btn {
+    background: var(--main-color) !important;
+    color: var(--main-text-color) !important;
+    padding: 8px 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.register-btn:hover {
+    opacity: 90%;
+    color: var(--main-text-color) !important;
+}
+
+.password__description {
+    color: var(--section-description);
+    font-size: 0.9rem;
+    line-height: 30px;
+    margin: 0;
+  }
+
+@media only screen and (max-width: 768px) {
+
+    .section__subtitle {
+        text-align: center;
+    }
+    .password__description {
+      text-align: left;
+    }
+  }

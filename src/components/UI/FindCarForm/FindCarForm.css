@@ -20,11 +20,28 @@
 
 .form {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     background: var(--main-text-color);
     padding: 25px 0 20px 15px;
     width: 100%;
+}
+
+.form__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__description > h6 {
+    font-size: 1.2rem;
+}
+
+.explanation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 .form__group {
@@ -66,6 +83,7 @@
     right: 20px;
     z-index: 11;
     width: 40%;
+    max-width: 550px;
 }
 
 .form__row {
@@ -101,5 +119,7 @@
         font-size: 0.8rem;
     }
 
-    
+    .form__description {
+        justify-content: center;
+    }
   }

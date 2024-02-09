@@ -1,13 +1,12 @@
-import React from "react";
 import { Col } from "reactstrap";
-import "./Cars.css";
 import CarForSale from "../../../assets/images/car-for-sale.png";
+import "./Cars.css";
 
-const Cars = ({ cars }) => {
+const Cars = ({cars}) => {
   return (
     <>
-      {cars.map((car, index) => (
-        <Col key={index} lg="4" md="4" sm="6" className="mb-5">
+      {cars && cars.map((car) => (
+        <Col key={`${car.year} ${car.make} ${car.model}`} lg="4" md="4" sm="6" className="mb-5">
           <div className="car__item">
             <div className="car__img">
               <img src={CarForSale} alt="Car" />
@@ -17,7 +16,7 @@ const Cars = ({ cars }) => {
               <h6 className="car__price">€{car.price}</h6>
               <div className="car__item-info">
                 <span>
-                  <i class="ri-palette-line"></i>
+                  <i className="ri-palette-line"></i>
                   {` ${car.color}`}
                 </span>
                 <span>
