@@ -1,13 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import "./SearchResultsPage.css";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
 import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
 
-const SearchResultsPage = () => {
-  const { cars, handleSearch } = useCarsContext();
-  const setMakeModel = useCarsDispatch();
+interface Car {
+  year: number;
+  make: string;
+  model: string;
+  price: number;
+  color: string;
+  mileage: number;
+  fuelType: string;
+  transmission: string;
+}
+
+const SearchResultsPage: React.FC = () => {
+  const { cars, handleSearch } = useCarsContext() as { cars: Car[], handleSearch: (makeModel: string) => void };
+  const setMakeModel = useCarsDispatch() as (makeModel: string) => void;
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const makeModel = searchParams.get("makeModel");
@@ -34,7 +45,7 @@ const SearchResultsPage = () => {
                   <h6 className="car__price">€{result.price}</h6>
                   <div className="car__item-info">
                     <span>
-                      <i class="ri-palette-line"></i>
+                      <i className="ri-palette-line"></i>
                       {` ${result.color}`}
                     </span>
                     <span>

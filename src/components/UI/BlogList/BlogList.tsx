@@ -3,17 +3,30 @@ import "./BlogList.css";
 import { Col } from "reactstrap";
 import blogReviews from "../../../assets/data/blogReviews";
 
-const BlogList = () => {
+interface Item {
+  imgUrl: string;
+  title: string;
+  author: string;
+  date: string;
+  description: string;
+  id: number;
+}
+
+interface BlogItemProps {
+  item: Item;
+}
+
+const BlogList: React.FC = () => {
   return (
     <>
-      {blogReviews.map((item) => (
+      {blogReviews.map((item: Item) => (
         <BlogItem item={item} key={item.id} />
       ))}
     </>
   );
 };
 
-const BlogItem = ({ item }) => {
+const BlogItem: React.FC<BlogItemProps> = ({ item }) => {
   const { imgUrl, title, author, date, description } = item;
   return (
     <Col lg="4" md="4" sm="6">

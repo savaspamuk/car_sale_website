@@ -2,7 +2,11 @@ import React from "react";
 import "./CommonSection.css";
 import { Container } from "reactstrap";
 
-const CommonSection = ({ title }) => {
+interface CommonSectionProps {
+  title: string;
+}
+
+const CommonSection: React.FC<CommonSectionProps> = ({ title }) => {
   return (
     <section className="common__section">
       <Container>

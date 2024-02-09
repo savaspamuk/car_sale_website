@@ -1,15 +1,15 @@
 import React from "react";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import Helmet from "../../components/Helmet/Helmet";
-import AboutSection from "../../components/UI/RegisterPage/RegisterPage";
+import AboutSection from "../../components/UI/LoginPage/LoginPage";
 
-const Register = () => {
+const Login: React.FC = () => {
   return (
-    <Helmet title="Register">
-      <CommonSection title="Register" />
+    <Helmet title="Login">
+      <CommonSection title="Login" />
       <AboutSection />
     </Helmet>
   );
 };
 
-export default Register;
+export default Login;

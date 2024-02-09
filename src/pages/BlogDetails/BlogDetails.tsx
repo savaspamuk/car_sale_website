@@ -1,19 +1,34 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./BlogDetails.css";
 import { Col } from "reactstrap";
 import blogReviews from "../../assets/data/blogReviews";
 
-const BlogDetails = () => {
+interface BlogItemData {
+  imgUrl: string;
+  title: string;
+  author: string;
+  date: string;
+  description: string;
+  description1: string;
+  description2: string;
+  id: number;
+}
+
+const BlogDetails: React.FC = () => {
   return (
     <div className="blog__details-container">
-      {blogReviews.map((item) => (
+      {blogReviews.map((item: BlogItemData) => (
         <BlogItem item={item} key={item.id} />
       ))}
     </div>
   );
 };
 
-const BlogItem = ({ item }) => {
+interface BlogItemProps {
+  item: BlogItemData;
+}
+
+const BlogItem: React.FC<BlogItemProps> = ({ item }) => {
   const {
     imgUrl,
     title,

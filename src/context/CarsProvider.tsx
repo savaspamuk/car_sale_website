@@ -1,12 +1,31 @@
-import { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext, useContext, Dispatch } from "react";
 
-const initialCarsState = { cars: [], makeModel: "", searchResult: []};
+interface Car {
+  id: string;
+  make: string;
+  model: string;
+  year: number;
+  price: number;
+}
+
+interface CarsState {
+  cars: Car[];
+  makeModel: string;
+  searchResult: Car[];
+}
+
+const initialCarsState: CarsState = { cars: [], makeModel: "", searchResult: []};
+
+interface CarsAction {
+  type: string;
+  payload: any;
+}
 
 
-export const CarsContext = createContext();
-export const CarsDispatchContext = createContext();
+export const CarsContext = createContext<CarsState | undefined>(undefined);
+export const CarsDispatchContext = createContext<Dispatch<CarsAction> | undefined>(undefined);
 
-export const CarsProvider = ({ children }) => {
+export const CarsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(
     carsReducer,
     initialCarsState
@@ -30,14 +49,14 @@ export const CarsActionType = {
   SET_SEARCH_RESULT: "setSearchResult"
 };
 
-function carsReducer(state, action) {
+function carsReducer(state: CarsState, action: CarsAction): CarsState {
   switch (action.type) {
     case CarsActionType.SET_CARS: {
       return { ...state, cars: action.payload };
     }
     case CarsActionType.UPDATE_CARS: {
       const existingIds = new Set(state.cars.map(car => car.id));
-      const uniqueNewCars = action.payload.filter(car => !existingIds.has(car.id));
+      const uniqueNewCars = action.payload.filter((car: Car) => !existingIds.has(car.id));
     
       return  {...state, cars: [...state.cars, ...uniqueNewCars]};
     }

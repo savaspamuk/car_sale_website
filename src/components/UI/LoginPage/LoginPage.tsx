@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { Form, FormGroup } from "reactstrap";
 import "./LoginPage.css";
 import { auth, app } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = (event) => {
+  const signIn = (event: FormEvent) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -34,7 +34,9 @@ const LoginPage = () => {
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setEmail(event.target.value)
+            }
             required
           />
         </FormGroup>
@@ -43,7 +45,9 @@ const LoginPage = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setPassword(event.target.value)
+            }
             required
           />
         </FormGroup>

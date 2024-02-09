@@ -3,7 +3,12 @@ import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import "./Footer.css";
 import FooterLogo from "../../assets/images/footer-logo.png";
 
-const quickLinks = [
+interface QuickLink {
+  path: string;
+  display: string;
+}
+
+const quickLinks: QuickLink[] = [
   { path: "/about", display: "About" },
   { path: "/cars", display: "Cars" },
   { path: "/blog-details", display: "Blog" },
@@ -11,7 +16,7 @@ const quickLinks = [
   { path: "#", display: "Privacy Policy" },
 ];
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <Container>
