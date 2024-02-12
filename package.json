@@ -11,10 +11,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.29.0",
-    "reactstrap": "^9.2.1",
+    "reactstrap": "^9.2.2",
     "remixicon": "^4.0.1",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
@@ -42,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/reactstrap": "^8.7.2",
+    "typescript": "^5.3.3"
   }
 }

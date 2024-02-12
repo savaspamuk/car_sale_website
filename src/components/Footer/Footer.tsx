@@ -18,7 +18,7 @@ const quickLinks: QuickLink[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" {...(null as any)}>
       <Container>
         <Row>
           <Col lg="4" md="4" sm="12">
