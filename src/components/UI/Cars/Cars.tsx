@@ -2,23 +2,13 @@ import React from "react";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
 import "./Cars.css";
-
-interface Car {
-  year: number;
-  make: string;
-  model: string;
-  price: number;
-  color: string;
-  mileage: number;
-  fuelType: string;
-  transmission: string;
-}
+import { Car } from "../../../models/Car";
 
 interface CarsProps {
   cars: Car[];
 }
 
-const Cars: React.FC<CarsProps> = ({ cars }) => {
+const Cars = ({ cars }: CarsProps) => {
   return (
     <>
       {cars &&

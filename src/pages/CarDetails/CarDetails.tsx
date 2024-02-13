@@ -6,41 +6,21 @@ import { useParams } from "react-router-dom";
 import CarForSale from "../../assets/images/car-for-sale.png";
 import { useCarsContext } from "../../context/CarsProvider";
 
-interface Car {
-  carName: string;
-  year: number;
-  make: string;
-  model: string;
-  price: number;
-  color: string;
-  mileage: number;
-  fuelType: string;
-  transmission: string;
-  engine: string;
-  horsepower: number;
-  features: string;
-  owners: number;
-}
-
-interface CarsContext {
-  cars: Car[];
-}
-
 interface RouteParams {
   model: string;
   [key: string]: string;
 }
 
 const CarDetails: React.FC = () => {
-  const { cars } = useCarsContext() as CarsContext;
+  const { cars } = useCarsContext();
   const { model } = useParams<RouteParams>();
 
-  const singleCarItem = cars.find((item) => item.carName === model);
+  const singleCarItem = cars.find((item) => item.model === model);
   if (!singleCarItem) {
     return <div>No car found with the specified model.</div>;
   }
   return (
-    <Helmet title={singleCarItem.carName}>
+    <Helmet title={singleCarItem.model}>
       <section>
         <Container>
           <Row>
