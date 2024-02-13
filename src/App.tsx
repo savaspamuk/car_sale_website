@@ -6,7 +6,8 @@ import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 
 import { BrowserRouter } from "react-router-dom";
-import { useCarsDispatch, CarsActionType } from "./context/CarsProvider";
+import { useCarsDispatch } from "./context/CarsProvider";
+import { CarsActionType } from "./models/Car";
 
 const App: React.FC = () => {
   const dispatch = useCarsDispatch();

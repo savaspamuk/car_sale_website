@@ -5,19 +5,10 @@ import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import Cars from "../../components/UI/Cars/Cars";
 import { useCarsContext } from "../../context/CarsProvider";
-
-interface Car {
-	year: number;
-	make: string;
-	model: string;
-}
-
-interface CarsContext {
-	cars: Car[];
-}
+import { Car } from "../../models/Car";
 
 const CarListing: React.FC = () => {
-  const { cars } = useCarsContext() as CarsContext;
+  const { cars } = useCarsContext();
   const [sorting, setSorting] = useState<string | undefined>(undefined);
   const [sortedCars, setSortedCars] = useState<Car[]>([]);
 
