@@ -3,7 +3,7 @@ import "./AgencyList.css";
 import { Col } from "reactstrap";
 import agencyData from "../../../assets/data/agencyData";
 
-interface Item {
+interface AgencyItem {
   title: string;
   address: string;
   desc: string;
@@ -12,7 +12,7 @@ interface Item {
 }
 
 interface AgencyItemProps {
-  item: Item;
+  item: AgencyItem;
 }
 
 const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
@@ -35,7 +35,7 @@ const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
 const AgencyList: React.FC = () => {
   return (
     <>
-      {agencyData.map((item: Item) => (
+      {agencyData.map((item: AgencyItem) => (
         <AgencyItem item={item} key={item.id} />
       ))}
     </>

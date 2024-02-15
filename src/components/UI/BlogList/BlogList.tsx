@@ -4,7 +4,7 @@ import { Col } from "reactstrap";
 import blogReviews from "../../../assets/data/blogReviews";
 import { Link } from "react-router-dom";
 
-interface Item {
+interface BlogPost {
   imgUrl: string;
   title: string;
   author: string;
@@ -14,13 +14,13 @@ interface Item {
 }
 
 interface BlogItemProps {
-  item: Item;
+  item: BlogPost;
 }
 
 const BlogList: React.FC = () => {
   return (
     <>
-      {blogReviews.map((item: Item) => (
+      {blogReviews.map((item: BlogPost) => (
         <BlogItem item={item} key={item.id} />
       ))}
     </>

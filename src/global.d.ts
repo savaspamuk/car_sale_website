@@ -6,11 +6,21 @@ interface Car {
   color: string;
   mileage: number;
   price: number;
-  fuelType: "Gasoline" | "Electric";
-  transmission: "Automatic" | "Manual";
+  fuelType: FuelType;
+  transmission: Transmission;
   engine: string;
   horsepower: number;
   features: string[];
   owners: number;
   image: string;
+}
+
+enum FuelType {
+  Gasoline = "Gasoline",
+  Electric = "Electric",
+}
+
+enum Transmission {
+  Automatic = "Automatic",
+  Manual = "Manual",
 }
