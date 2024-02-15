@@ -1,43 +1,29 @@
-import React, { useEffect, useState, ChangeEvent } from "react";
+// @ts-nocheck
+import { ChangeEvent } from "react";
 import "./CarListing.css";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import Cars from "../../components/UI/Cars/Cars";
 import { useCarsContext } from "../../context/CarsProvider";
-import { Car } from "../../models/Car";
+import { useCarsDispatch } from "../../context/CarsProvider";
+import { CarsActionType } from "../../models/Car";
 
 const CarListing: React.FC = () => {
   const { cars } = useCarsContext();
-  const [sorting, setSorting] = useState<string | undefined>(undefined);
-  const [sortedCars, setSortedCars] = useState<Car[]>([]);
+  const dispatch = useCarsDispatch();
 
-  useEffect(() => {
-    if (sorting === "asc") {
-      const sortedResult = [...cars].sort((a, b) => {
-        const carAKey = `${a.year} ${a.make} ${a.model}`;
-        const carBKey = `${b.year} ${b.make} ${b.model}`;
-
-        return carAKey.localeCompare(carBKey);
-      });
-      setSortedCars(sortedResult);
-    } else if (sorting === "des") {
-      const sortedResult = [...cars].sort((a, b) => {
-        const carAKey = `${a.year} ${a.make} ${a.model}`;
-        const carBKey = `${b.year} ${b.make} ${b.model}`;
-
-        return carBKey.localeCompare(carAKey);
-      });
-      setSortedCars(sortedResult);
-    } else {
-      setSortedCars(cars);
-    }
-  }, [sorting, cars]);
-
-  const handleSort = async (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleSort = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectedSort = event.target.value;
-    if (selectedSort === "asc" || selectedSort === "des") {
-      setSorting(selectedSort);
+
+    if (selectedSort === "asc" || selectedSort === "desc") {
+      dispatch({
+        type: CarsActionType.SORT_CARS,
+        payload: {
+          cars,
+          sorting: selectedSort,
+        },
+      });
     }
   };
 
@@ -53,13 +39,14 @@ const CarListing: React.FC = () => {
                   <i className="ri-sort-asc"></i> Sort By Model Name
                 </span>
                 <select className="car__listing-select" onChange={handleSort}>
-                  <option>Select</option>
-                  <option value="asc">A to Z</option>
-                  <option value="des">Z to A</option>
+                  <option value="asc" selected>
+                    A to Z
+                  </option>
+                  <option value="desc">Z to A</option>
                 </select>
               </div>
             </Col>
-            <Cars cars={sortedCars} />
+            <Cars cars={cars} />
           </Row>
         </Container>
       </section>

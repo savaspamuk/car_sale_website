@@ -1,14 +1,33 @@
-import React from "react";
+import { useEffect } from "react";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
+import { useCarsDispatch } from "../../../context/CarsProvider";
+import { CarsActionType } from "../../../models/Car";
 import "./Cars.css";
-import { Car } from "../../../models/Car";
+import orderBy from "lodash/orderBy";
 
 interface CarsProps {
   cars: Car[];
 }
 
 const Cars = ({ cars }: CarsProps) => {
+  const dispatch = useCarsDispatch();
+
+  useEffect(() => {
+    fetch("https://freetestapi.com/api/v1/cars")
+      .then((response) => response.json())
+      .then((data: any) => {
+        if (data) {
+          dispatch &&
+            dispatch({
+              type: CarsActionType.SET_CARS,
+              payload: orderBy(data, ["make", "model"]),
+            });
+        }
+      })
+      .catch((error) => console.error("Unable to fetch cars data", error));
+  }, []);
+
   return (
     <>
       {cars &&
