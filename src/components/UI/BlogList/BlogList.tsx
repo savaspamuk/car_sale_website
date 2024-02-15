@@ -2,6 +2,7 @@ import React from "react";
 import "./BlogList.css";
 import { Col } from "reactstrap";
 import blogReviews from "../../../assets/data/blogReviews";
+import { Link } from "react-router-dom";
 
 interface Item {
   imgUrl: string;
@@ -27,10 +28,10 @@ const BlogList: React.FC = () => {
 };
 
 const BlogItem: React.FC<BlogItemProps> = ({ item }) => {
-  const { imgUrl, title, author, date, description } = item;
+  const { imgUrl, title, author, date, description, id } = item;
   return (
     <Col lg="4" md="4" sm="6">
-      <a className="blog" href="/blog-details">
+      <Link className="blog" to={"/blogs/" + id}>
         <div className="blog__item">
           <img src={imgUrl} alt="Blog Review" />
           <div className="blog__info">
@@ -50,7 +51,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ item }) => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </Col>
   );
 };

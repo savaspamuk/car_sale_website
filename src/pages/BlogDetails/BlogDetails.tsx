@@ -1,7 +1,8 @@
-import React from "react";
+// @ts-nocheck
 import "./BlogDetails.css";
 import { Col } from "reactstrap";
 import blogReviews from "../../assets/data/blogReviews";
+import { useParams } from "react-router-dom";
 
 interface BlogItemData {
   imgUrl: string;
@@ -15,11 +16,12 @@ interface BlogItemData {
 }
 
 const BlogDetails: React.FC = () => {
+  const { id } = useParams();
+  const blogItem = blogReviews.find((blogItem) => String(blogItem.id) === id);
+
   return (
     <div className="blog__details-container">
-      {blogReviews.map((item: BlogItemData) => (
-        <BlogItem item={item} key={item.id} />
-      ))}
+      <BlogItem item={blogItem ?? {}} key={id} />
     </div>
   );
 };
