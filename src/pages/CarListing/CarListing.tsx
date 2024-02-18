@@ -38,8 +38,8 @@ const CarListing: React.FC = () => {
                 <span>
                   <i className="ri-sort-asc"></i> Sort By Model Name
                 </span>
-                <select className="car__listing-select" onChange={handleSort}>
-                  <option value="asc" selected>
+                <select className="car__listing-select" onChange={handleSort} defaultValue={"asc"}>
+                  <option value="asc">
                     A to Z
                   </option>
                   <option value="desc">Z to A</option>

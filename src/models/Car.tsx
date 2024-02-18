@@ -1,6 +1,11 @@
 export interface CarsAction {
   type: CarsActionType;
-  payload: Car[] | string | undefined;
+  payload?: CarsActionPayload;
+}
+
+export interface CarsActionPayload {
+  cars?: Car[];
+  sorting?: boolean | "asc" | "desc"; 
 }
 
 export enum CarsActionType {

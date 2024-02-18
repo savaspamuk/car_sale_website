@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import React, { useReducer, createContext, useContext, Dispatch } from "react";
 import { CarsAction, CarsActionType } from "../models/Car";
 import { orderBy } from "lodash";
@@ -38,24 +36,24 @@ function carsReducer(state: CarsState, action: CarsAction): CarsState {
     case CarsActionType.SET_CARS: {
       return {
         ...state,
-        cars: orderBy(action.payload, ["make", "model"], "asc") as Car[],
+        cars: orderBy(action.payload?.cars, ["make", "model"], "asc") ,
       };
     }
     case CarsActionType.SORT_CARS: {
       return {
         ...state,
         cars: orderBy(
-          action.payload.cars,
+          action.payload?.cars,
           ["make", "model"],
-          action.payload.sorting
-        ) as Car[],
+          action.payload?.sorting
+        ) ,
       };
     }
     case CarsActionType.UPDATE_CARS: {
       const existingIds = new Set(state.cars.map((car) => car.id));
-      const uniqueNewCars = (action.payload as Car[]).filter(
+      const uniqueNewCars = action.payload?.cars ? action.payload?.cars.filter(
         (car: Car) => !existingIds.has(car.id)
-      );
+      ) : [];
 
       return { ...state, cars: [...state.cars, ...uniqueNewCars] };
     }
