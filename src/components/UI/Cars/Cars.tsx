@@ -5,6 +5,7 @@ import { useCarsDispatch } from "../../../context/CarsProvider";
 import { CarsActionType } from "../../../models/Car";
 import "./Cars.css";
 import orderBy from "lodash/orderBy";
+import { Link } from "react-router-dom";
 
 interface CarsProps {
   cars: Car[];
@@ -21,7 +22,7 @@ const Cars = ({ cars }: CarsProps) => {
           dispatch &&
             dispatch({
               type: CarsActionType.SET_CARS,
-              payload: orderBy(data, ["make", "model"]),
+              payload: {cars: orderBy(data, ["make", "model"])},
             });
         }
       })
@@ -65,7 +66,7 @@ const Cars = ({ cars }: CarsProps) => {
                   </span>
                 </div>
                 <div className="car__item-btn-box">
-                  <button className="car__item-btn">See details</button>
+                  <Link to={`/car-details/${car.id}`}className="car__item-btn">See details</Link>
                   <button className="car__item-btn car__btn-details">
                     Buy this car
                   </button>

@@ -36,6 +36,8 @@
     color: var(--main-text-color);
     width: 100%;
     transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
 }
 
 .car__item-btn:hover {

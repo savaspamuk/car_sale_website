@@ -18,7 +18,7 @@ const Routers: React.FC = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/cars" element={<CarListing />} />
-      <Route path="/car-details" element={<CarDetails />} />
+      <Route path="/car-details/:id" element={<CarDetails />} />
       <Route path="/blogs" element={<Blog />} />
       <Route path="/blogs/:id" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
