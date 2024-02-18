@@ -6,12 +6,12 @@ import AboutSection from "../../components/UI/AboutSection/AboutSection";
 import AgencyList from "../../components/UI/AgencyList/AgencyList";
 import Cars from "../../components/UI/Cars/Cars";
 import BlogList from "../../components/UI/BlogList/BlogList";
-import {
-	useCarsContext,
-} from '../../context/CarsProvider';
+import { useCarsContext } from "../../context/CarsProvider";
+import React from "react";
 
-const Home = () => {
-	const {cars} = useCarsContext();
+
+const Home: React.FC = () => {
+  const { cars } = useCarsContext();
 
   return (
     <Helmet title="Home">
@@ -47,19 +47,21 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {cars && <section>
-        <Container>
-          <Row>
-            <Col lg="12">
-              <h6 className="section__subtitle">Car List</h6>
-              <h4 className="section__title">
-                Check out the vehicles on our list
-              </h4>
-            </Col>
-            <Cars cars={cars.slice(0, 6)} />
-          </Row>
-        </Container>
-      </section>}
+      {cars && (
+        <section>
+          <Container>
+            <Row>
+              <Col lg="12">
+                <h6 className="section__subtitle">Car List</h6>
+                <h4 className="section__title">
+                  Check out the vehicles on our list
+                </h4>
+              </Col>
+              <Cars cars={cars.slice(0, 6)} />
+            </Row>
+          </Container>
+        </section>
+      )}
 
       <section>
         <Container>

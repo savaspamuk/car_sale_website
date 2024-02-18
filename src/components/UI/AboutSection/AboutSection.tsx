@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import "./AboutSection.css";
 import AboutImage from "../../../assets/images/about-img.png";
 
-const AboutSection = () => {
+const AboutSection: React.FC = () => {
   return (
     <section>
       <Container>
@@ -21,8 +21,8 @@ const AboutSection = () => {
               </p>
               <div className="about__section-item">
                 <p className="section__description">
-                  <i className="ri-checkbox-circle-line"></i> The introduction of
-                  the "Buy your car here" feature enables users to compare
+                  <i className="ri-checkbox-circle-line"></i> The introduction
+                  of the "Buy your car here" feature enables users to compare
                   offers for purchasing new cars.
                 </p>
                 <p className="section__description">
@@ -35,11 +35,12 @@ const AboutSection = () => {
               </div>
               <div className="about__section-item">
                 <p className="section__description">
-                  <i className="ri-checkbox-circle-line"></i> Structured to assist
-                  the automotive industry in adapting to the online landscape,
-                  we provides a range of data-driven tools and services. These
-                  include lead generation, stock sourcing, brand enhancement,
-                  e-commerce training, as well as marketing and advertising.
+                  <i className="ri-checkbox-circle-line"></i> Structured to
+                  assist the automotive industry in adapting to the online
+                  landscape, we provides a range of data-driven tools and
+                  services. These include lead generation, stock sourcing, brand
+                  enhancement, e-commerce training, as well as marketing and
+                  advertising.
                 </p>
                 <p className="section__description">
                   <i className="ri-checkbox-circle-line"></i> Headquartered in

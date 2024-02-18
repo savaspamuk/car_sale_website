@@ -1,21 +1,17 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FindCarForm.css";
 import { Form, FormGroup } from "reactstrap";
-import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
 
-const FindCarForm = () => {
+const FindCarForm: React.FC = () => {
   const navigate = useNavigate();
-  const { makeModel, handleSearch } = useCarsContext();
-  const setMakeModel = useCarsDispatch();
+  const [makeModel, setMakeModel] = useState<string>("");
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    handleSearch(makeModel);
-    navigate("/results");
+    const cleansedMakeModel = makeModel.toLowerCase();
+    navigate(`/results?makeModel=${cleansedMakeModel}`);
   };
-
-  console.log(makeModel);
 
   return (
     <Form onSubmit={handleFormSubmit}>
@@ -34,7 +30,9 @@ const FindCarForm = () => {
               type="text"
               placeholder="Enter a car model to search"
               value={makeModel}
-              onChange={(e) => setMakeModel(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setMakeModel(e.target.value)
+              }
             />
           </FormGroup>
           <FormGroup className="form__group">

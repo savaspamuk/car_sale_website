@@ -1,10 +1,10 @@
 import React from "react";
 import "./Contact.css";
-import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
+import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <Helmet title="Contact">
       <CommonSection title="Contact" />
@@ -17,7 +17,7 @@ const Contact = () => {
                 className="contact__form-container"
                 action="mailto:abc@abc.com"
                 method="post"
-                enctype="text/plain"
+                encType="text/plain"
               >
                 <FormGroup className="contact__form">
                   <input type="text" placeholder="Enter your name" />
@@ -27,7 +27,6 @@ const Contact = () => {
                 </FormGroup>
                 <FormGroup className="contact__form">
                   <textarea
-                    type="text"
                     placeholder="Enter your message"
                     className="text-area"
                   />

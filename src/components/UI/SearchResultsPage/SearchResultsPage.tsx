@@ -1,29 +1,32 @@
-import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import "./SearchResultsPage.css";
 import { Col } from "reactstrap";
 import CarForSale from "../../../assets/images/car-for-sale.png";
-import { useCarsContext, useCarsDispatch } from "../../../context/CarsProvider";
+import { useCarsContext } from "../../../context/CarsProvider";
 
-const SearchResultsPage = () => {
-  const { cars, handleSearch } = useCarsContext();
-  const setMakeModel = useCarsDispatch();
+const SearchResultsPage: React.FC = () => {
+  const { cars } = useCarsContext();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const makeModel = searchParams.get("makeModel");
+  const searchParameters = makeModel?.split(" ") || ["", ""];
+  let currentCars: any = [];
 
-  React.useEffect(() => {
-    if (makeModel) {
-      handleSearch(makeModel);
-      setMakeModel(makeModel);
-    }
-  }, [makeModel, handleSearch, setMakeModel]);
+  if (searchParameters.length === 1) {
+    currentCars = cars.filter((car) => {
+      const parameter = searchParameters[0];
+      return (
+        car.model.toLocaleLowerCase() === parameter ||
+        car.make.toLowerCase() === parameter
+      );
+    });
+  }
 
   return (
     <div className="search__results">
       <div className="search__items">
-        {cars ? (
-          cars.map((result, index) => (
+        {currentCars.length ? (
+          currentCars.map((result: any, index: number) => (
             <Col key={index} lg="4" md="4" sm="6" className="mb-5">
               <div className="car__item">
                 <div className="car__img">
@@ -34,7 +37,7 @@ const SearchResultsPage = () => {
                   <h6 className="car__price">€{result.price}</h6>
                   <div className="car__item-info">
                     <span>
-                      <i class="ri-palette-line"></i>
+                      <i className="ri-palette-line"></i>
                       {` ${result.color}`}
                     </span>
                     <span>

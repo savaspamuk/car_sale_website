@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { Form, FormGroup } from "reactstrap";
 import "./RegisterPage.css";
 import { auth, app } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const RegisterPage = () => {
+const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate("");
+  const navigate = useNavigate();
 
-  const register = (event) => {
+  const register = (event: FormEvent) => {
     event.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -37,7 +37,9 @@ const RegisterPage = () => {
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setEmail(event.target.value)
+            }
             required
           />
         </FormGroup>
@@ -46,7 +48,9 @@ const RegisterPage = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setPassword(event.target.value)
+            }
             required
           />
           <p className="password__description">

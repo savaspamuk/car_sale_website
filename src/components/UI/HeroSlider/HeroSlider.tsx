@@ -3,8 +3,19 @@ import Slider from "react-slick";
 import { Container } from "reactstrap";
 import "./HeroSlider.css";
 
-const HeroSlider = () => {
-  const settings = {
+interface Settings {
+  fade: boolean;
+  speed: number;
+  autoplaySpeed: number;
+  infinite: boolean;
+  autoplay: boolean;
+  slidesToShow: number;
+  slidesToScroll: number;
+  pauseOnHover: boolean;
+}
+
+const HeroSlider: React.FC = () => {
+  const settings: Settings = {
     fade: true,
     speed: 5000,
     autoplaySpeed: 5000,

@@ -4,7 +4,7 @@ import { Container, Row } from "reactstrap";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 import BlogList from "../../components/UI/BlogList/BlogList";
 
-const Blog = () => {
+const Blog: React.FC = () => {
   return (
     <Helmet title="Blogs">
       <CommonSection title="Blogs" />

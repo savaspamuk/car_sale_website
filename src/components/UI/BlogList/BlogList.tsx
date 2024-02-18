@@ -2,22 +2,36 @@ import React from "react";
 import "./BlogList.css";
 import { Col } from "reactstrap";
 import blogReviews from "../../../assets/data/blogReviews";
+import { Link } from "react-router-dom";
 
-const BlogList = () => {
+interface BlogPost {
+  imgUrl: string;
+  title: string;
+  author: string;
+  date: string;
+  description: string;
+  id: number;
+}
+
+interface BlogItemProps {
+  item: BlogPost;
+}
+
+const BlogList: React.FC = () => {
   return (
     <>
-      {blogReviews.map((item) => (
+      {blogReviews.map((item: BlogPost) => (
         <BlogItem item={item} key={item.id} />
       ))}
     </>
   );
 };
 
-const BlogItem = ({ item }) => {
-  const { imgUrl, title, author, date, description } = item;
+const BlogItem: React.FC<BlogItemProps> = ({ item }) => {
+  const { imgUrl, title, author, date, description, id } = item;
   return (
     <Col lg="4" md="4" sm="6">
-      <a className="blog" href="/blog-details">
+      <Link className="blog" to={"/blogs/" + id}>
         <div className="blog__item">
           <img src={imgUrl} alt="Blog Review" />
           <div className="blog__info">
@@ -37,7 +51,7 @@ const BlogItem = ({ item }) => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </Col>
   );
 };

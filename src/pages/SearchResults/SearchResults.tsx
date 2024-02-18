@@ -3,7 +3,7 @@ import SearchResultsPage from "../../components/UI/SearchResultsPage/SearchResul
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/UI/CommonSection/CommonSection";
 
-const SearchResults = () => {
+const SearchResults: React.FC = () => {
   return (
     <Helmet title="Search Results">
       <CommonSection title="Search Results" />

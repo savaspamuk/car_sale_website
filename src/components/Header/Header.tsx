@@ -3,7 +3,12 @@ import { Container, Row, Col } from "reactstrap";
 import HeaderLogo from "../../assets/images/header-logo.png";
 import "./Header.css";
 
-const navLinks = [
+interface NavLink {
+  path: string;
+  display: string;
+}
+
+const navLinks: NavLink[] = [
   { path: "/", display: "Home" },
   { path: "/about", display: "About" },
   { path: "/cars", display: "Cars" },
@@ -11,10 +16,10 @@ const navLinks = [
   { path: "/contact", display: "Contact" },
 ];
 
-const Header = () => {
-  const menuRef = useRef(null);
+const Header: React.FC = () => {
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
+  const toggleMenu = () => menuRef.current?.classList.toggle("menu__active");
   return (
     <header className="header">
       <div className="header__top">
