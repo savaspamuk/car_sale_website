@@ -87,7 +87,12 @@ const Header = () => {
               <i className="ri-menu-line" onClick={toggleMenu}></i>
             </span>
 
-            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <div
+              className="navigation"
+              data-testid="navigation"
+              ref={menuRef}
+              onClick={toggleMenu}
+            >
               <div className="menu">
                 {navLinks.map((item, index) => (
                   <a href={item.path} className="nav__item" key={index}>
