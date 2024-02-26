@@ -3,7 +3,7 @@ import "./AgencyList.css";
 import { Col } from "reactstrap";
 import agencyData from "../../../assets/data/agencyData";
 
-const AgencyItem = ({ item }) => (
+export const AgencyItem = ({ item }) => (
   <Col lg="4" md="4" sm="6" className="mb-3">
     <div className="service__item">
       <span>
