@@ -15,7 +15,7 @@ interface AgencyItemProps {
   item: AgencyItem;
 }
 
-const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
+export const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
   <Col lg="4" md="4" sm="6" className="mb-3">
     <div className="service__item">
       <span>
