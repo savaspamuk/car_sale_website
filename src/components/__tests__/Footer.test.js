@@ -26,8 +26,7 @@ test("displays correct office information", () => {
 
 test("should render the company logo and tagline correctly", () => {
   render(<Footer />);
-  const logo = screen.getByAltText("Left-Logo");
+  const logo = screen.getAllByTestId("bottom-logo");
   const tagline = screen.getByText("_A Car");
-  expect(logo).toBeInTheDocument();
   expect(tagline).toBeInTheDocument();
 });

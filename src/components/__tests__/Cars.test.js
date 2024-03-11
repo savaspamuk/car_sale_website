@@ -12,12 +12,6 @@ test("Renders the Cars component with no data", () => {
   expect(screen.queryByText(/See details/i)).toBeNull();
 });
 
-test("Renders the Cars component with no data", () => {
-  render(<Cars cars={[]} />);
-
-  expect(screen.queryByText(/See details/i)).toBeNull();
-});
-
 test("Renders car items with details link", () => {
   const mockCars = [{ id: 1, year: 2023, make: "Toyota", model: "Camry" }];
 

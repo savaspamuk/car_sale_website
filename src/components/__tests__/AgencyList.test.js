@@ -9,9 +9,13 @@ describe("AgencyItem Component", () => {
 
   test("AgencyItem displays item details", () => {
     render(<AgencyItem item={item} />);
-    expect(screen.getByText(item.title)).toBeInTheDocument();
-    expect(screen.getByText(item.address)).toBeInTheDocument();
-    expect(screen.getByText(item.desc)).toBeInTheDocument();
+    expect(screen.getByText(item.title)).toHaveTextContent("Göteborg South");
+    expect(screen.getByText(item.address)).toHaveTextContent(
+      "Mölndal, Göteborg"
+    );
+    expect(screen.getByText(item.desc)).toHaveTextContent(
+      "Located in Mölndal, south of Göteborg, this agency provides a temporary yet serene atmosphere. With its proximity to the sea, it offers a dual experience of tranquility and vibrant car choices. Discover your ideal car with trusted dealers in this scenic setting."
+    );
     expect(screen.getByRole("link")).toHaveAttribute("href", item.location);
   });
 

@@ -77,7 +77,7 @@ const Header: React.FC = () => {
                 <span>
                   <i className="ri-customer-service-2-line"></i>
                 </span>
-                <button className="header__btn btn">
+                <button className="header__btn btn" data-testid="call-button">
                   <a href="tel: +46 123 456 78 90">CALL US NOW</a>
                 </button>
               </div>
@@ -100,7 +100,12 @@ const Header: React.FC = () => {
             >
               <div className="menu">
                 {navLinks.map((item, index) => (
-                  <a href={item.path} className="nav__item" key={index}>
+                  <a
+                    href={item.path}
+                    className="nav__item"
+                    key={index}
+                    data-testid="nav-link"
+                  >
                     {item.display}
                   </a>
                 ))}
@@ -118,7 +123,11 @@ const Header: React.FC = () => {
                 </a>
               </div>
               <div className="search__box">
-                <input type="text" placeholder="Search" />
+                <input
+                  type="text"
+                  placeholder="Search"
+                  data-testid="search-input"
+                />
                 <span>
                   <i className="ri-search-line"></i>
                 </span>

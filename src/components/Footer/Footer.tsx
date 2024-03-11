@@ -25,7 +25,11 @@ const Footer: React.FC = () => {
             <div className="logo footer__logo">
               <h1>
                 <a href="/">
-                  <img src={FooterLogo} alt="Left-Logo" />
+                  <img
+                    src={FooterLogo}
+                    alt="Logo of Car Buy Service"
+                    data-testid="bottom-logo"
+                  />
                   <div>
                     <span>Buy ↴</span>
                     <span>_A Car</span>
