@@ -2,6 +2,7 @@ import React from "react";
 import "./AgencyList.css";
 import { Col } from "reactstrap";
 import agencyData from "../../../assets/data/agencyData";
+import { Link } from "react-router-dom";
 
 interface AgencyItem {
   title: string;
@@ -15,19 +16,17 @@ interface AgencyItemProps {
   item: AgencyItem;
 }
 
-const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
+export const AgencyItem: React.FC<AgencyItemProps> = ({ item }) => (
   <Col lg="4" md="4" sm="6" className="mb-3">
     <div className="service__item">
-      <span>
-        <h4>{item.title}</h4>
-      </span>
+      <h4>{item.title}</h4>
 
       <h6>{item.address}</h6>
       <p className="section__description">{item.desc}</p>
-      <a href={item.location} target="_blank">
+      <Link to={item.location} target="_blank" rel="noreferrer">
         <i className="ri-map-pin-range-fill"></i>
-        <span>Click to see on map</span>
-      </a>
+        Click to see on map
+      </Link>
     </div>
   </Col>
 );

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Container, Row, Col } from "reactstrap";
 import HeaderLogo from "../../assets/images/header-logo.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 interface NavLink {
   path: string;
@@ -40,13 +41,13 @@ const Header: React.FC = () => {
             <Col lg="3" md="3" sm="4">
               <div className="logo">
                 <h1>
-                  <a href="/">
+                  <Link to="/">
                     <img src={HeaderLogo} alt="Left-Logo" />
                     <div>
                       <span>Buy ↴</span>
                       <span>_A Car</span>
                     </div>
-                  </a>
+                  </Link>
                 </h1>
               </div>
             </Col>
@@ -77,8 +78,8 @@ const Header: React.FC = () => {
                 <span>
                   <i className="ri-customer-service-2-line"></i>
                 </span>
-                <button className="header__btn btn">
-                  <a href="tel: +46 123 456 78 90">CALL US NOW</a>
+                <button className="header__btn btn" data-testid="call-button">
+                  <Link to="tel: +46 123 456 78 90">CALL US NOW</Link>
                 </button>
               </div>
             </Col>
@@ -92,28 +93,42 @@ const Header: React.FC = () => {
               <i className="ri-menu-line" onClick={toggleMenu}></i>
             </span>
 
-            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <div
+              className="navigation"
+              data-testid="navigation"
+              ref={menuRef}
+              onClick={toggleMenu}
+            >
               <div className="menu">
                 {navLinks.map((item, index) => (
-                  <a href={item.path} className="nav__item" key={index}>
+                  <Link
+                    to={item.path}
+                    className="nav__item"
+                    key={index}
+                    data-testid="nav-link"
+                  >
                     {item.display}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
             <div className="nav__right">
               <div className="nav__right__register">
-                <a href="/login">
+                <Link to="/login">
                   <i className="ri-login-circle-line"></i> Login
-                </a>
+                </Link>
 
-                <a href="register">
+                <Link to="register">
                   <i className="ri-user-line"></i> Register
-                </a>
+                </Link>
               </div>
               <div className="search__box">
-                <input type="text" placeholder="Search" />
+                <input
+                  type="text"
+                  placeholder="Search"
+                  data-testid="search-input"
+                />
                 <span>
                   <i className="ri-search-line"></i>
                 </span>

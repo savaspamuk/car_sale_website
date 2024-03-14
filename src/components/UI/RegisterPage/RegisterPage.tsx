@@ -3,7 +3,7 @@ import { Form, FormGroup } from "reactstrap";
 import "./RegisterPage.css";
 import { auth, app } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ const RegisterPage: React.FC = () => {
         <p className="section__subtitle">
           Already a user?
           <span>
-            <a href="/login">Go to Login page</a>
+            <Link to="/login">Go to Login page</Link>
           </span>
         </p>
         <FormGroup className="form__group">

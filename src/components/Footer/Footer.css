@@ -5,13 +5,8 @@
 
 .footer__logo span {
 color: var(--main-text-color) !important;
-font-weight: 400;
+font-weight: 500;
 padding-left: 10px;
-}
-
-.footer__logo span {
-    color: var(--main-text-color);
-    font-weight: 500;
 }
 
 .footer__logo-content {
@@ -44,15 +39,16 @@ padding-left: 10px;
 .office__info {
     color: var(--section-description);
     font-weight: 300;
-}
-
-.office__info a {
     text-decoration: none;
-    color: var(--section-description);
     transition: 0.3s;
+    display: block;
 }
 
-.office__info a:hover {
+.office__info:hover {
+    color: var(--main-highlight-color);
+}
+
+.social__link-icon {
     color: var(--main-highlight-color);
 }
 

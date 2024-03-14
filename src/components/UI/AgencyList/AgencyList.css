@@ -9,7 +9,7 @@
     justify-content: space-between;
 }
 
-.service__item span h4 {
+.service__item h4 {
     color: var(--main-highlight-color);
 }
 
