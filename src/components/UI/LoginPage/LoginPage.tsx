@@ -3,6 +3,7 @@ import { Form, FormGroup } from "reactstrap";
 import "./LoginPage.css";
 import { auth, app } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ const LoginPage: React.FC = () => {
         <p className="section__subtitle">
           New user?
           <span>
-            <a href="/register">Click here to Register</a>
+            <Link to="/register">Click here to Register</Link>
           </span>
         </p>
         <FormGroup className="form__group">
