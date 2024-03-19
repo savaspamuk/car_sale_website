@@ -42,6 +42,7 @@ padding-left: 10px;
 }
 
 .office__info {
+    display: block;
     color: var(--section-description);
     font-weight: 300;
 }
