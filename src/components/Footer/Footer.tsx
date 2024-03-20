@@ -4,6 +4,7 @@ import "./Footer.css";
 import FooterLogo from "../../assets/images/footer-logo.png";
 import { Link } from "react-router-dom";
 import officeInfos from "../../assets/data/officeInfo";
+import { TextField } from "@mui/material";
 
 interface QuickLink {
   path: string;
@@ -25,12 +26,20 @@ const quickLinks: QuickLink[] = [
 ];
 
 const OfficeInfo: React.FC<OfficeInfo> = ({ href, text, icon }) => (
-  <a href={href} className="office__info" data-testid="office-info">
+  <Link to={href} className="office__info" data-testid="office-info">
     <i className={icon}></i> {text}
-  </a>
+  </Link>
 );
 
 const Footer: React.FC = () => {
+  const [isValidEmail, setIsValidEmail] = React.useState(true);
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const email = event.target.value;
+    const isValid = /\S+@\S+\.\S+/.test(email);
+
+    setIsValidEmail(isValid);
+  };
   return (
     <footer className="footer">
       <Container>
@@ -91,12 +100,13 @@ const Footer: React.FC = () => {
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">Subscribe our Newsletter</p>
-              <div className="newsletter">
-                <input type="email" placeholder="Email" />
-                <span>
-                  <i className="ri-send-plane-line"></i>
-                </span>
-              </div>
+              <TextField
+                id="standard-basic"
+                label="Enter your e-mail!"
+                variant="filled"
+                helperText={isValidEmail ? " " : "*Please enter a valid e-mail"}
+                onChange={handleEmailChange}
+              />
             </div>
           </Col>
         </Row>
